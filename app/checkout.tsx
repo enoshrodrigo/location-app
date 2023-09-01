@@ -45,7 +45,7 @@ export default function ModalScreen() {
   
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Check out</Text>
+      <Text style={styles.title}>Dulara out</Text>
     
     <ScrollView>
         <View style={{ height: 266, margin: 3,marginLeft:6,marginRight:6 }}>
