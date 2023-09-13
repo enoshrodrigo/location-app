@@ -21,7 +21,7 @@ export default function TabOneScreen() {
  
  
         <View style={styles.titleView}>
-        <Text style={styles.texts}>Hello World</Text>
+        <Text style={styles.texts}>Hello Saduni & Sameera</Text>
         </View>
         <Items />
  
