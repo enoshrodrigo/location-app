@@ -18,7 +18,7 @@ export default function TabOneScreen() {
       <ScrollView>
  
         <View style={styles.titleView}>
-        <Text style={styles.texts}>Hello this is copy of main  barnch</Text>
+        <Text style={styles.texts}>Hello this is main  barnch</Text>
         </View>
         <Items />
  
