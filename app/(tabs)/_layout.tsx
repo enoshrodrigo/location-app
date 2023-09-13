@@ -28,9 +28,9 @@ export default function TabLayout() {
         name="index"
         
         options={{
-          title: 'Tab One',
+          title: 'Home',
           
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
             <Link href="/checkout" asChild>
               <Pressable>
@@ -47,16 +47,27 @@ export default function TabLayout() {
           ),
         }}
       />
+      
+      <Tabs.Screen
+      
+      name="categories"
+      options={{
+         
+        title: 'Categories',
+        tabBarIcon: ({ color }) => <TabBarIcon name="sitemap" color={color} />,
+      }}
+    />
       <Tabs.Screen
       
         name="two"
         options={{
            
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Me',
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
         }}
       />
-    </Tabs>
+  
+     </Tabs>
     
   );
 }
