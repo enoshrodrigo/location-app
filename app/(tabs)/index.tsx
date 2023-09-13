@@ -18,7 +18,7 @@ export default function TabOneScreen() {
       <ScrollView>
  
         <View style={styles.titleView}>
-        <Text style={styles.texts}>Hello World</Text>
+        <Text style={styles.texts}>Hello Enosh</Text>
         </View>
         <Items />
  
