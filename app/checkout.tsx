@@ -8,8 +8,16 @@ import { StatusBar } from 'expo-status-bar';
 import MapView ,{Marker ,PROVIDER_GOOGLE  } from 'react-native-maps';
 import { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 
+// type props ={
+//   id:string
+// }
 export default function ModalScreen() {
+  const params = useLocalSearchParams();
+  const id = useRouter()
+  console.log(params.name);
+  
   const [location, setLocation] = useState({"coords": {"accuracy": 10, "altitude": 12.508781433105469, "altitudeAccuracy": 4, "heading": -1, "latitude": 7.238724231726712, "longitude": 79.86116434454905, "speed": 0}, "timestamp": 1693491337999.0625}||{});
   
   const [markerLocation,setMarkerLocation]=useState({"latitude": 7.238724231726712, "longitude": 79.86116434454905})
