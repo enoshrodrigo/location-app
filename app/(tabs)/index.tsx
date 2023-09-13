@@ -17,13 +17,14 @@ export default function TabOneScreen() {
    
       <ScrollView>
  
+ 
         <View style={styles.titleView}>
         <Text style={styles.texts}>Hello this is main  barnch</Text>
         </View>
         <Items />
  
  
-     
+ 
       </ScrollView>
     </View>
   );
