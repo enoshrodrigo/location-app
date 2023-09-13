@@ -8,7 +8,7 @@ import { StatusBar } from 'expo-status-bar';
 import MapView ,{Marker ,PROVIDER_GOOGLE  } from 'react-native-maps';
 import { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
-
+import Items  from '../componments/Items';
 export default function TabOneScreen() {
   
    
@@ -16,8 +16,15 @@ export default function TabOneScreen() {
     <View style={styles.container}>
    
       <ScrollView>
-        <Text style={styles.texts}>Hello Dulara</Text>
-    
+ 
+ 
+        <View style={styles.titleView}>
+        <Text style={styles.texts}>Hello this is main  barnch</Text>
+        </View>
+        <Items />
+ 
+ 
+ 
       </ScrollView>
     </View>
   );
@@ -27,13 +34,18 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    margin:3,
+    margin:3,   
+  
+  },
+  titleView:{
+   
+    alignItems: 'center',
+   justifyContent: 'center',
   },
   separator: {
     marginVertical: 30,
