@@ -20,6 +20,7 @@ export default function ModalScreen() {
     setMarkerLocation(event.nativeEvent.coordinate)
    
   }; 
+  
    
   useEffect(()=>{
    (
@@ -41,7 +42,7 @@ export default function ModalScreen() {
   },[])
 
  
-      
+   
   
   return (
     <View style={styles.container}>
@@ -78,6 +79,8 @@ export default function ModalScreen() {
       </ScrollView>
      
       <Button title='Rest location' onPress={async ()=>{  setMarkerLocation({"latitude": location.coords.latitude, "longitude": location.coords.longitude})}}/>
+      
+
     </View>
   );
 }
