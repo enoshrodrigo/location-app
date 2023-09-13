@@ -22,7 +22,7 @@ export default function TabOneScreen() {
  
  
         <View style={styles.titleView}>
-        <Text style={styles.texts}>Hello /main branch</Text>
+        <Text style={styles.texts}>Hello main branch</Text>
         </View>
         <Items />
  
