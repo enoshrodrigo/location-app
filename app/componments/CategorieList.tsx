@@ -14,7 +14,7 @@ import Colors from "../../constants/Colors";
 import fashion from '../../assets//images/categories/fashion.webp';
 import electronics from '../../assets//images/categories/electronics.webp';
 import furniture from '../../assets//images/categories/furniture.webp';
-import beauty from '../../assets//images/categories/beauty.webp';
+// import beauty from '../../assets//images/categories/beauty.webp';
 import toys from '../../assets//images/categories/toys.webp';
 import sports from '../../assets//images/categories/sports.png';
 import books from '../../assets//images/categories/books.webp';
@@ -26,7 +26,7 @@ import deals from '../../assets//images/categories/deals.gif';
     fashion,
     electronics,
     furniture,
-    beauty,
+    toys,
     toys,
     sports,
     books,
@@ -47,7 +47,7 @@ export default function CategorieList() {
         <Text style={styles.CategorieName} key={inedx}>{list.name}</Text>
         
         <Card.Cover source={images[inedx]} style={{width:100,height:100}} />
-        <Link style={styles.button} href={{ pathname: '/checkout', params: { name: list.id } }}>Go to Details</Link>
+        <Link style={styles.button} href={{ pathname: '/categoryItems', params: { name: list.id } }}>Go to Details</Link>
       </Card>   
         ))
       }

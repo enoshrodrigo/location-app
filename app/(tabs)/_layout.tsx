@@ -55,6 +55,20 @@ export default function TabLayout() {
          
         title: 'Categories',
         tabBarIcon: ({ color }) => <TabBarIcon name="sitemap" color={color} />,
+        // headerRight: () => (
+        //   <Link href="/categoryItems" asChild>
+        //     <Pressable>
+        //       {({ pressed }) => (
+        //         <FontAwesome
+        //           name="info-circle"
+        //           size={25}
+        //           color={Colors[colorScheme ?? 'light'].text}
+        //           style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+        //         />
+        //       )}
+        //     </Pressable>
+        //   </Link>
+        // ),
       }}
     />
       <Tabs.Screen
