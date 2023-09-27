@@ -30,25 +30,25 @@ const addCart =()=>{
   return (
     <View style={styles.container}>
       {
-        Items.map((data,index)=>(
+        Items.map(  (data,index)=>(
           data.id===params.name?(
-          <View>
+          <View key={index}>
             <Text style={styles.title}>{data.name}</Text>
     
     <ScrollView>
       <View style={styles.inBox}>
       { 
-        data.items.map((items,indexVal)=>(
+        data.items.map(  (items,indexVal)=>(
           
     
-        <Card style={styles.catItems}  >
+        <Card style={styles.catItems} key={indexVal} >
           
           <Text style={styles.CategorieName}>{items.itemname}</Text>
           
           <Card.Cover source={{ uri: items.link }} style={{width:100,height:100}} />
           <Text style={styles.CategorieName}>Rs.{items.price}</Text>
 
-          {/* <Button onPress={addCart} style={styles.button} >Add to cart</Button> */}
+          <Link href={".."}   style={styles.button} >Add to cart</Link>
         </Card>  
         
         
@@ -62,14 +62,7 @@ const addCart =()=>{
         ))
       }
       
-      <View style={styles.scrollCartView}>
-        <Text>The cart will appear here</Text>
-        <Text>The longitude is : </Text>
-        <Text>The latitude is :  </Text>
-        <Text>The to</Text>
-        <Text>The to</Text>
-
-        </View>
+       
       
       
      
@@ -92,6 +85,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     margin:5,
     borderRadius:12,
+    marginBottom:40,
   },
   title: {
     fontSize: 20,
@@ -101,19 +95,19 @@ const styles = StyleSheet.create({
     
   },
   button: {
-    borderRadius: 12,
+    borderRadius:20,
+    padding:8,
     marginTop:12,
+    backgroundColor:"lightblue",
+    textAlign:"center",
+  
 
   },
   scrollCartView:{
 margin:8,
 marginLeft:11
   },
-  button: {
-    borderRadius: 12,
-    marginTop:12,
-
-  },
+  
   catItems: {
     borderRadius: 11,
     backgroundColor: "white",
