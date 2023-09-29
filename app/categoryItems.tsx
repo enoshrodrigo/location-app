@@ -1,4 +1,4 @@
-import { Button, Platform, Pressable, ScrollView, StyleSheet,useColorScheme  } from 'react-native';
+import { Button, Platform, Pressable, ScrollView, StyleSheet,useColorScheme, Image  } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
@@ -9,8 +9,7 @@ import MapView ,{Marker ,PROVIDER_GOOGLE  } from 'react-native-maps';
 import { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
 import { Link, useLocalSearchParams, useRouter } from 'expo-router';
-import { Card } from 'react-native-paper';
-import electronics from '../assets//images/categories/electronics.webp';
+import { Card } from 'react-native-paper'; 
 import axios from 'axios';
 import { Items } from '../data';
 import { json } from 'body-parser';
@@ -28,7 +27,7 @@ export default function CategoryScreen() {
   const addToCart = async (item:any) => {
     
  
-      await axios.post("http://192.168.1.3:5000/api/addtocart",{data:item}).then((res)=>{
+      await axios.post("http://192.168.1.4:5000/api/addtocart",{data:item}).then((res)=>{
        setCartItems(res.data)
        alert("Item added to cart ")
       }).catch((err)=>{
@@ -38,11 +37,11 @@ export default function CategoryScreen() {
   };
  useEffect(  ()=>{
   
-    axios.post("http://192.168.1.3:5000/getcart").then((res)=>{
+  ( async()=>{ await axios.post("http://192.168.1.4:5000/getcart").then((res)=>{
     setCartItems(res.data)
    }).catch((err)=>{
      console.log(err);})
-  
+  }) ()
   
  },[])
    
@@ -63,10 +62,13 @@ export default function CategoryScreen() {
     
         <Card style={styles.catItems} key={indexVal} >
           
-          <Text style={styles.CategorieName}>{items.itemname}</Text>
+          <Text style={{color:'black',
+   textAlign:'center',
+   alignSelf:"center",
+   marginBottom:8,width:99,height:"auto"}}>{items.itemname}</Text>
           
-          <Card.Cover source={{ uri: items.link }} style={{width:100,height:100}} />
-          <Text style={styles.CategorieName}>Rs.{items.price}</Text>
+          <Image source={{ uri: items.link }} style={{width:120,height:120,margin:2,alignSelf:"center",objectFit:"contain"}} />
+          <Text style={styles.CategoriePrice}>Rs.{items.price}</Text>
 
           <Pressable
   style={[styles.button, cartItems.some((cartItem) => cartItem.id === items.id) && styles.disabledButton]}
@@ -77,7 +79,7 @@ export default function CategoryScreen() {
 >
   <Text style={styles.addCart}>
     {cartItems.some((cartItem) => cartItem.id === items.id)
-      ? 'Added cart'
+      ? 'Already in cart'
       : 'Add to Cart'}
   </Text>
 </Pressable>
@@ -111,6 +113,7 @@ const styles = StyleSheet.create({
    
     // justifyContent: 'center',
   },
+ 
   inBox: {
     display: "flex",
     justifyContent:'space-evenly',
@@ -124,6 +127,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     margin:12,
+    
   },
   disabledButton: {
     backgroundColor: 'gray', // Change this to your preferred disabled button style
@@ -151,10 +155,12 @@ marginLeft:11
     borderRadius: 11,
     backgroundColor: "white",
     padding: 8,
-    margin: 8,
+    margin: 6,
   },
-  CategorieName:{
+  CategoriePrice:{
     color:'black',
-   textAlign:'center'
+   textAlign:'center',
+   marginTop:6,
+  
   }
 });

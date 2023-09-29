@@ -1,5 +1,4 @@
-import React from "react";
-import { Image } from 'expo-image';
+import React from "react"; 
 import { Platform, ScrollView, StyleSheet, useColorScheme} from "react-native";
 import { Text, View } from "../../components/Themed";
 import { TextInput } from "react-native-gesture-handler";
@@ -14,7 +13,7 @@ import Colors from "../../constants/Colors";
 import fashion from '../../assets//images/categories/fashion.webp';
 import electronics from '../../assets//images/categories/electronics.webp';
 import furniture from '../../assets//images/categories/furniture.webp';
-// import beauty from '../../assets//images/categories/beauty.webp';
+import beauty from '../../assets//images/categories/beauty.webp';
 import toys from '../../assets//images/categories/toys.webp';
 import sports from '../../assets//images/categories/sports.png';
 import books from '../../assets//images/categories/books.webp';
@@ -26,7 +25,7 @@ import deals from '../../assets//images/categories/deals.gif';
     fashion,
     electronics,
     furniture,
-    toys,
+    beauty,
     toys,
     sports,
     books,
