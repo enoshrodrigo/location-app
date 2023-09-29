@@ -35,7 +35,18 @@ export default function ModalScreen() {
    
   }; 
   
-   
+   async function deleteCart(ids:string){
+    
+    await axios.post("http://192.168.1.4:5000/delete",{id:ids}).then((res)=>{
+      alert("Item deleted succesfully");
+    ( async()=>{ await axios.post("http://192.168.1.4:5000/getcart").then((res)=>{
+      setCheckOutItems(res.data)
+     }).catch((err)=>{
+       console.log(err);})
+    }) ()
+   }).catch((err)=>{
+     console.log(err);})
+  }
   useEffect(()=>{
    (
 
@@ -137,7 +148,9 @@ export default function ModalScreen() {
   </Pressable>
 
 </View>
-<Pressable style={{  
+<Pressable 
+onPress={()=>{deleteCart(cart.id)}}
+style={{  
 // borderRadius:12,
 padding:7,
 margin:2,
@@ -209,7 +222,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     margin:9,
     width:"auto",
-    padding:4,
+    padding:4, 
 },
 secondBox:{ 
   flex:1,

@@ -43,6 +43,12 @@ app.post("/getcart",async(req,res)=>{
         res.send(result);
     })
 })
+
+app.post("/delete",async(req,res)=>{
+    db.query("DELETE FROM cart WHERE id=?", req.body.id,(err, result) => {
+         res.send(result);
+     })
+ })
 app.listen("5000",()=>{
     console.log("Running on port 5000")
  })
