@@ -8,10 +8,12 @@ import { StatusBar } from 'expo-status-bar';
 import MapView ,{Marker ,PROVIDER_GOOGLE  } from 'react-native-maps';
 import { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { Link, useLocalSearchParams, useRouter } from 'expo-router';
 import { Card } from 'react-native-paper';
 import { FontAwesome } from '@expo/vector-icons';
 import axios from 'axios';
+import CheckoutButton from './componments/checkoutButton';
+import FinalPrice from './componments/finalPrice';
 
 // type props ={
 //   id:string
@@ -23,6 +25,9 @@ export default function ModalScreen() {
   const [CheckOutItems, setCheckOutItems] = useState(
     [{ categoryid: "0", id: ' 111', itemname: "jew", price: 2400.34, link: "https://assets-global.website-files.com/5cdcb07b95678db167f2bd86/6340bdfbeb3b663555ee1dca_Best%20receipts%20app%20HERO.png",quntity:4 },]
   );
+
+
+  
    
   
   const [location, setLocation] = useState({"coords": {"accuracy": 10, "altitude": 12.508781433105469, "altitudeAccuracy": 4, "heading": -1, "latitude": 7.238724231726712, "longitude": 79.86116434454905, "speed": 0}, "timestamp": 1693491337999.0625}||{});
@@ -37,9 +42,9 @@ export default function ModalScreen() {
   
    async function deleteCart(ids:string){
     
-    await axios.post("http://192.168.1.4:5000/delete",{id:ids}).then((res)=>{
+    await axios.post("http://192.168.1.6:5000/delete",{id:ids}).then((res)=>{
       alert("Item deleted succesfully");
-    ( async()=>{ await axios.post("http://192.168.1.4:5000/getcart").then((res)=>{
+    ( async()=>{ await axios.post("http://192.168.1.6:5000/getcart").then((res)=>{
       setCheckOutItems(res.data)
      }).catch((err)=>{
        console.log(err);})
@@ -47,6 +52,30 @@ export default function ModalScreen() {
    }).catch((err)=>{
      console.log(err);})
   }
+
+  async function quntity(id:string,quntity:number,plusOrMinus:string) {
+    plusOrMinus==="+"?quntity++:quntity--;
+      
+      if(quntity>5){
+        return  alert("Maximum quntity reached");
+          
+      }
+      if(quntity<1){
+        return  alert("Minimum quntity reached");
+      
+      } 
+    await axios.post("http://192.168.1.6:5000/quntity",{id:id,quntity:quntity}).then((res)=>{
+      // alert("Item deleted succesfully");
+      ( async()=>{ await axios.post("http://192.168.1.6:5000/getcart").then((res)=>{
+        
+        setCheckOutItems(res.data)
+       }).catch((err)=>{
+         console.log(err);})
+      }) ()
+    })
+  
+ }
+
   useEffect(()=>{
    (
 
@@ -65,7 +94,7 @@ export default function ModalScreen() {
    ) ()
    ,
 
-   ( async()=>{ await axios.post("http://192.168.1.4:5000/getcart").then((res)=>{
+   ( async()=>{ await axios.post("http://192.168.1.6:5000/getcart").then((res)=>{
     setCheckOutItems(res.data)
    }).catch((err)=>{
      console.log(err);})
@@ -102,8 +131,9 @@ export default function ModalScreen() {
         {/* Item */}
         {
           CheckOutItems.map((cart,index)=>(
+           
 <View>
-
+ 
 
 <View style={styles.inBox} key={index}>
  
@@ -121,7 +151,9 @@ export default function ModalScreen() {
 
 <Text  style={{alignSelf:"center",margin:2,color:"black"}}>Rs.{(cart.price*cart.quntity).toFixed(2)}</Text>
 <View style={{flexDirection:"row",margin:2,backgroundColor:"white",borderRadius:12}}>
-  <Pressable style={styles.button} >
+  <Pressable style={styles.button} 
+  onPress={()=>quntity(cart.id,cart.quntity,"-")}
+  >
   {({ pressed }) => (
               <FontAwesome
                 name="minus"
@@ -133,8 +165,11 @@ export default function ModalScreen() {
    
   
   </Pressable>
-  <Text style={{alignSelf:"center",margin:8,color:"black"}}>1</Text>
-  <Pressable style={styles.button} >
+  <Text style={{alignSelf:"center",margin:8,color:"black"}}>{cart.quntity}</Text>
+  <Pressable style={styles.button} 
+  onPress={()=>quntity(cart.id,cart.quntity,"+")}
+  
+  >
   {({ pressed }) => (
               <FontAwesome
                 name="plus"
@@ -185,6 +220,8 @@ backgroundColor:"transparent", }} >
         }
          
        {/* Item */}
+       <FinalPrice total={100} deliveryFee={30} discount={10} />
+        <CheckoutButton  />
         
       </ScrollView>
      

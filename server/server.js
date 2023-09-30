@@ -24,8 +24,8 @@ const db= mysql.createConnection({
 app.post("/api/addtocart",async(req,res)=>{
     const data = req.body.data;
     console.log(data);
-    const addCart =   db.query("INSERT INTO cart (categoryid, itemname, price, link, id ) VALUES (?,?,?,?,?)",
-    [data.categoryid, data.itemname, data.price, data.link, data.id], (err,result)=>{
+    const addCart =   db.query("INSERT INTO cart (categoryid, itemname, price, link, id, total ) VALUES (?,?,?,?,?,?)",
+    [data.categoryid, data.itemname, data.price, data.link, data.id, data.price], (err,result)=>{
         if(err){
             console.log("Error with data to database")
             return res.send({error:"Error"})
@@ -43,6 +43,25 @@ app.post("/getcart",async(req,res)=>{
         res.send(result);
     })
 })
+
+app.post("/quntity",async(req,res)=>{
+    const {id,quntity}=req.body;
+
+  const up=  await db.query("UPDATE `cart` SET `quntity` = '?' WHERE `cart`.`id` = ?",[quntity,id], (err, result) => {
+        if(err){
+           return console.log(err)
+        }
+        
+     })
+   const qun= await db.query("UPDATE `cart` SET `total` = '?'*price WHERE `cart`.`id` = ?",[quntity,id], (err, result) => {
+        if(err){
+           return console.log(err)
+        }
+       
+     })
+   res.send("Updated");
+
+ })
 
 app.post("/delete",async(req,res)=>{
     db.query("DELETE FROM cart WHERE id=?", req.body.id,(err, result) => {
