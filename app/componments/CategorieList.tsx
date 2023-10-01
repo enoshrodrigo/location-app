@@ -1,5 +1,4 @@
-import React from "react";
-import { Image } from 'expo-image';
+import React from "react"; 
 import { Platform, ScrollView, StyleSheet, useColorScheme} from "react-native";
 import { Text, View } from "../../components/Themed";
 import { TextInput } from "react-native-gesture-handler";
@@ -47,7 +46,7 @@ export default function CategorieList() {
         <Text style={styles.CategorieName} key={inedx}>{list.name}</Text>
         
         <Card.Cover source={images[inedx]} style={{width:100,height:100}} />
-        <Link style={styles.button} href={{ pathname: '/checkout', params: { name: list.id } }}>Go to Details</Link>
+        <Link style={styles.button} href={{ pathname: '/categoryItems', params: { name: list.id } }}>Go to Details</Link>
       </Card>   
         ))
       }
