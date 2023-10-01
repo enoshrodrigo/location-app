@@ -2,18 +2,18 @@ import { useNavigation } from 'expo-router';
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
+type check={
+  onPress:()=>{}
+}
 
-
-const CheckoutButton = () => {
+const CheckoutButton = (Props:check) => {
   return (
     <View style={styles.container}>
       <Button
         title="Checkout"
         buttonStyle={styles.button}
         titleStyle={styles.buttonText}
-        onPress={() => {
-          
-        }}
+        onPress={Props.onPress}
       />
     </View>
   );

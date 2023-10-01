@@ -27,7 +27,7 @@ export default function CategoryScreen() {
   const addToCart = async (item:any) => {
     
  
-      await axios.post("http://192.168.1.6:5000/api/addtocart",{data:item}).then((res)=>{
+      await axios.post(`${process.env.EXPO_PUBLIC_API_URL}/api/addtocart`,{data:item}).then((res)=>{
        setCartItems(res.data)
        alert("Item added to cart ")
       }).catch((err)=>{
@@ -37,7 +37,7 @@ export default function CategoryScreen() {
   };
  useEffect(  ()=>{
   
-  ( async()=>{ await axios.post("http://192.168.1.6:5000/getcart").then((res)=>{
+  ( async()=>{ await axios.post(`${process.env.EXPO_PUBLIC_API_URL}/getcart`).then((res)=>{
     setCartItems(res.data)
    }).catch((err)=>{
      console.log(err);})
