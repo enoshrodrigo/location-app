@@ -18,10 +18,15 @@ export default function TabOneScreen() {
       <ScrollView>
  
  
+ 
+ 
+ 
         <View style={styles.titleView}>
-        <Text style={styles.texts}>Hello Dulara</Text>
+        <Text style={styles.texts}>Hello main branch</Text>
         </View>
         <Items />
+ 
+ 
  
  
  
