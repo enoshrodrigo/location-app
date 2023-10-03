@@ -271,7 +271,7 @@ backgroundColor:"transparent", }} >
         }
          
        {/* Item */}
-       <FinalPrice itemsTotal={totalPrice} deliveryFee={30} discount={10} userLocation={markerLocation} distance={Distance} />
+       <FinalPrice itemsTotal={totalPrice}   discount={10} userLocation={markerLocation} distance={Distance} />
         <CheckoutButton  onPress={getTotal}/>
         
       </ScrollView>
