@@ -21,12 +21,25 @@ const FinalPrice=(props:FinalPriceProps)=> {
 
   return (
     <View style={styles.container}>
-      <View style={styles.label}><Text style={{fontSize: 18,color:"white"}}>Items Total: </Text><Text style={{fontSize: 18,color:"white"}}>Rs.{props.itemsTotal.toFixed(2)}</Text></View>
+      
+      {
+        props.distance<12?
+        <View>
+          <View style={styles.label}><Text style={{fontSize: 18,color:"white"}}>Items Total: </Text><Text style={{fontSize: 18,color:"white"}}>Rs.{props.itemsTotal.toFixed(2)}</Text></View>
       <View style={styles.label}><Text style={{fontSize: 18,color:"white"}}>Delivery Fee: </Text><Text style={{fontSize: 18,color:"white"}}>Rs.{props.deliveryFee.toFixed(2)}</Text></View>
-      <View style={styles.label}><Text style={{fontSize: 18,color:"white"}}>Distance(KM):</Text><Text style={{fontSize: 18,color:"white"}}>{props.distance.toFixed(2)} KM</Text></View>
-      <View style={styles.label}><Text style={{fontSize: 18,color:"white"}}>Discount: </Text><Text style={{fontSize: 18,color:"white"}}>Rs.{props.deliveryFee.toFixed(2)}</Text></View>
+      <View style={styles.label}><Text style={{fontSize: 18,color:"white"}}>Distance(KM):</Text>
+        <Text style={{fontSize: 18,color:"white"}}>{props.distance.toFixed(2)} KM</Text>
+        </View>
+
+        <View style={styles.label}><Text style={{fontSize: 18,color:"white"}}>Discount: </Text><Text style={{fontSize: 18,color:"white"}}>Rs.{props.deliveryFee.toFixed(2)}</Text></View>
       <View style={styles.label}><Text style={{fontSize: 18,color:"white"}}>Total Payment: </Text><Text style={{fontSize: 18,color:"white"}}>Rs.{finalPrice.toFixed(2)}</Text></View>
 
+      </View>
+        :<Text style={{fontSize: 18,color:"red"}}>(Offer not valid)select only in 12km</Text>
+      }
+      
+      
+      
     </View>
   );
 };
