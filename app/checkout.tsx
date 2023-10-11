@@ -14,7 +14,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import axios from 'axios';
 import CheckoutButton from './componments/checkoutButton';
 import FinalPrice from './componments/finalPrice';
-
+import CheckoutPopup from './componments/CheckoutPopup';
 // type props ={
 //   id:string
 // }
@@ -56,6 +56,14 @@ export default function ModalScreen() {
  
   const [totalPrice,setTotal]=useState(0);
   const [Distance,setDistance]=useState(0);
+  const [isCheckoutPopupVisible, setCheckoutPopupVisible] = useState(false);
+
+
+  const OrderConfirm = () => {
+    
+    setCheckoutPopupVisible(true);
+  
+  };
 
  const getTotal=async()=>{
      await axios.get(`${process.env.EXPO_PUBLIC_API_URL}/getTotal`).then((res)=>{
@@ -271,8 +279,12 @@ backgroundColor:"transparent", }} >
         }
          
        {/* Item */}
-       <FinalPrice itemsTotal={totalPrice} deliveryFee={30} discount={10} userLocation={markerLocation} distance={Distance} />
-        <CheckoutButton  onPress={getTotal}/>
+       <FinalPrice itemsTotal={totalPrice}   discount={10} userLocation={markerLocation} distance={Distance} />
+        <CheckoutButton  onPress={OrderConfirm}/>
+        <CheckoutPopup
+        isVisible={isCheckoutPopupVisible}
+        onClose={() => setCheckoutPopupVisible(false)}
+      />
         
       </ScrollView>
      

@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
 type check={
-  onPress:()=>{}
+  onPress:()=>void
 }
 
 const CheckoutButton = (Props:check) => {
