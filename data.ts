@@ -113,6 +113,11 @@ export const Items = [
   },
 ];
 
+export const images=[
+  {
+    checkout:"https://styles.redditmedia.com/t5_xphkm/styles/communityIcon_pyhoorfg61ca1.png",
+  }
+]
 // ../../assets/
 // ../../assets/
 // ../../assets/

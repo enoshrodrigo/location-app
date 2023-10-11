@@ -46,7 +46,7 @@ app.post("/getcart",async(req,res)=>{
 
 app.get("/getTotal",async(req,res)=>{
     db.query("SELECT total FROM cart",async (err, result) => {
-        let total=0;
+       let total=0;
          result.map((data)=>{
         total=total+data.total;
         //  console.log(data.total)
