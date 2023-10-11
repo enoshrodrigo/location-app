@@ -25,8 +25,7 @@ export default function TabOneScreen() {
  
  
         <Text style={styles.texts}>Hello main branch</Text>
- 
-        <Text style={styles.texts}>Hello Sammera</Text>
+  
  
         </View>
         <Items />
