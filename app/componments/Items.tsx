@@ -10,7 +10,14 @@ export default function Items()  {
    <View style={styles.inBox}>
     <Text style={styles.box} >Hello</Text>
     <Text  style={styles.box}>Hello</Text> 
-   </View>
+    <Text  style={styles.box}>Hello</Text>
+    <Text  style={styles.box}>Hello</Text>
+    <Text  style={styles.box}>Hello</Text>
+    <Text  style={styles.box}>Hello</Text>
+    <Text  style={styles.box}>Hello</Text>
+    <Text  style={styles.box}>Hello</Text>
+
+   </View> 
  
   )
 }
@@ -20,7 +27,8 @@ const styles = StyleSheet.create({
 inBox:{ 
     display:'flex',
     // justifyContent:'space-evenly',
-    flexDirection:'row'
+    flexDirection:'row',
+    flexWrap:'wrap'
 },
 box:{
     borderRadius:11,
