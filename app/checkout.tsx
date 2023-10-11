@@ -280,11 +280,13 @@ backgroundColor:"transparent", }} >
          
        {/* Item */}
        <FinalPrice itemsTotal={totalPrice}   discount={10} userLocation={markerLocation} distance={Distance} />
+ 
         <CheckoutButton  onPress={OrderConfirm}/>
         <CheckoutPopup
         isVisible={isCheckoutPopupVisible}
         onClose={() => setCheckoutPopupVisible(false)}
       />
+ 
         
       </ScrollView>
      
