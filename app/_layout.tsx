@@ -68,6 +68,7 @@ function LoginScreen({ onLogin }: any) {
       onLogin(); // Set authentication status to true.
     } else {
       // Display an error message or take appropriate action for failed login.
+      alert("Invalid details")
     }
   };
 
