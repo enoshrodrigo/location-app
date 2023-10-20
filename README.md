@@ -3,10 +3,10 @@
 Welcome to our third-year project for the Human-Computer Interaction course! We have developed a location-based shopping app that primarily focuses on the front end, providing an intuitive and interactive shopping experience for users. This app also includes a backend component using Node.js and MySQL for database management.
 
 Team members-
-  Dulara attanayaka
-  Enosh rodrigo
-  Dewmi perera
-  Saduni nethranjali
+  Dulara attanayaka,
+  Enosh rodrigo,
+  Dewmi perera,
+  Saduni nethranjali,
   Sammera jayakodi
   
 ## Project Overview
