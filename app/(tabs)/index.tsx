@@ -31,7 +31,7 @@ export default function TabOneScreen() {
         </View>
 
         <View style={styles.Offers}>
-          <Text style={styles.OffersText}>Limited offers</Text>
+          <Text style={styles.OffersText}>Cooking offers</Text>
           <TabThreeScreen offers={cooking} />
         </View>
         <View style={styles.Offers}>
