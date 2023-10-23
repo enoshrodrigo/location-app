@@ -143,9 +143,9 @@ export const offers =[
 
 export const cooking =[
   // { categoryid: "099", id: '901', itemname: "Discounted Item", price: 400 ,link: "https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,h_600,q_auto,w_600/l3skqjw9zd4wqw8ubfx2.gif"},
-  { categoryid: "099", id: '905', itemname: "Ramen", price: 5500 ,link: "https://1212928256.rsc.cdn77.org/content/images/thumbs/000/0007903_1000.png"},
-  { categoryid: "099", id: '906', itemname: "Buldak", price: 6500 ,link: "https://www.thatcutedish.com/wp-content/uploads/2021/06/buldak-noodles-1-e1624901576550.png"},
-  { categoryid: "099", id: '907', itemname: "Cheese Ramen", price: 4500 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
+  { categoryid: "0100", id: '905', itemname: "Ramen", price: 5500 ,link: "https://1212928256.rsc.cdn77.org/content/images/thumbs/000/0007903_1000.png"},
+  { categoryid: "0100", id: '906', itemname: "Buldak", price: 6500 ,link: "https://www.thatcutedish.com/wp-content/uploads/2021/06/buldak-noodles-1-e1624901576550.png"},
+  { categoryid: "0100", id: '907', itemname: "Cheese Ramen", price: 4500 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
 ]
 // ../../assets/
 // ../../assets/
