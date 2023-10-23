@@ -18,7 +18,7 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
   const [count, setCount] = useState(10);
   const cart = useRef(null)
-  // const [ref,setData]=InView({TimeRanges:1})
+  
  if(cart){
   axios.get(`${process.env.EXPO_PUBLIC_API_URL}/api/cartCount`).then((res)=>{
     setCount(res.data[0]["COUNT(id)"])

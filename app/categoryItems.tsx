@@ -55,12 +55,12 @@ export default function CategoryScreen() {
             <Text style={styles.title}>{data.name}</Text>
     
     <ScrollView>
-      <View style={styles.inBox}>
+      <View style={styles.inBox}  >
       { 
         data.items.map(  (items,indexVal)=>(
           
     
-        <Card style={styles.catItems} key={indexVal} >
+        <Card style={styles.catItems} key={indexVal}  >
           
           <Text style={{color:'black',
    textAlign:'center',
