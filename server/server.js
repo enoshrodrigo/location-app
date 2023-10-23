@@ -20,7 +20,17 @@ const db= mysql.createConnection({
     password: "",
     database: "shoppingapp",
 })
+app.get("/api/cartCount",async(req,res)=>{
+    const addCart =   db.query("SELECT  COUNT(id) FROM cart",(err,result)=>{
+        if(err){
 
+        }
+      
+            return res.send(result)
+            
+        
+    })
+})
 app.post("/api/addtocart",async(req,res)=>{
     const data = req.body.data;
     console.log(data);

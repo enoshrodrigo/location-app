@@ -73,7 +73,7 @@ export default function ModalScreen() {
  }
 
   const [CheckOutItems, setCheckOutItems] = useState(
-    [{ categoryid: "0", id: ' 111', itemname: "jew", price: 2400.34, link: "https://assets-global.website-files.com/5cdcb07b95678db167f2bd86/6340bdfbeb3b663555ee1dca_Best%20receipts%20app%20HERO.png",quntity:4 },]
+    [{ categoryid: "0", id: ' 111', itemname: "Loading...", price: 0.00, link: "https://i.gifer.com/ZKZg.gif",quntity:0 },]
   );
 
 

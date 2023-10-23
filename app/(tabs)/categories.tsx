@@ -4,11 +4,20 @@ import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CategorieList from '../componments/CategorieList';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function Categories() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Categories</Text>
+
+      <Text style={styles.title}><FontAwesome
+                    name="tags"      
+                    size={25}
+                    color="white"
+                    // color={Colors[colorScheme ?? 'light'].text}
+                    style={{ marginRight: 15,}}
+                  /> Select your Favorite </Text>
+      
 
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="app/(tabs)/categories.tsx" /> */}
@@ -49,7 +58,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    alignItems: 'center',
+    alignSelf: 'center',
 
   },
   separator: {
