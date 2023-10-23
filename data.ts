@@ -1,14 +1,16 @@
  
 export const categoriesNamesData = [
-  { id:'011', name: "Fashion",  },
-  { id:'022', name: "Electronics",  },
-  { id:'033', name: "Furniture",  },
-  { id:'044', name: "Beauty",  },
-  { id:'055', name: "Toys ",  },
-  { id:'066', name: "Sports",  },
-  { id:'077', name: "Books",  },
-  { id:'088', name: "Jewelry ",  },
-  { id:'099', name: "Deals",  },
+  { id:'011', name: "Fashion",link: "https://static-01.daraz.lk/p/5fa64ef34ed029eaad73cd6fdfceb7fd.png"  },
+  { id:'022', name: "Electronics",link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp"  },
+  { id:'033', name: "Furniture",link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp"  },
+  { id:'044', name: "Beauty", link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
+  { id:'055', name: "Toys ",link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp"  },
+  { id:'066', name: "Sports", link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
+  { id:'077', name: "Books", link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
+  { id:'088', name: "Jewelry ", link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
+  { id:'099', name: "Deals",link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp"  },
+  { id:'0100', name: "Foods",link: "https://www.royacshop.com/wp-content/uploads/2017/12/Nigerian-Snacks-247x296.png"  },
+
 
 ];
 export const Items = [
@@ -106,7 +108,19 @@ export const Items = [
       { categoryid: "099", id: '901', itemname: "Discounted Item", price: 400 ,link: "https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,h_600,q_auto,w_600/l3skqjw9zd4wqw8ubfx2.gif"},
       { categoryid: "099", id: '902', itemname: "Airpod", price: 5500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios15-iphone13-pro-airpods-setup-animation-steps.gif"},
       { categoryid: "099", id: '903', itemname: "Airpods Pro", price: 6500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios14-3-iphone11-pro-connect-airpods-max-animation.gif"},
-      { categoryid: "099", id: '904', itemname: "Galaxy Buds", price: 4500 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
+      { categoryid: "099", id: '904', itemname: "Galaxy Buds (Discounted)", price: 4500 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
+
+      // Add more deal items here
+    ]
+  },
+  {
+    id: '0100',
+    name: "Food",
+    items: [
+  { categoryid: "0100", id: '905', itemname: "Ramen", price: 990 ,link: "https://1212928256.rsc.cdn77.org/content/images/thumbs/000/0007903_1000.png"},
+  { categoryid: "0100", id: '906', itemname: "Buldak", price: 750 ,link: "https://www.thatcutedish.com/wp-content/uploads/2021/06/buldak-noodles-1-e1624901576550.png"},
+  { categoryid: "0100", id: '907', itemname: "Cheese Ramen", price: 550 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
+
 
       // Add more deal items here
     ]
@@ -117,6 +131,21 @@ export const images=[
   {
     checkout:"https://styles.redditmedia.com/t5_xphkm/styles/communityIcon_pyhoorfg61ca1.png",
   }
+]
+
+
+export const offers =[
+  // { categoryid: "099", id: '901', itemname: "Discounted Item", price: 400 ,link: "https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,h_600,q_auto,w_600/l3skqjw9zd4wqw8ubfx2.gif"},
+  { categoryid: "099", id: '902', itemname: "Airpod", price: 5500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios15-iphone13-pro-airpods-setup-animation-steps.gif"},
+  { categoryid: "099", id: '903', itemname: "Airpods Pro", price: 6500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios14-3-iphone11-pro-connect-airpods-max-animation.gif"},
+  { categoryid: "099", id: '904', itemname: "Galaxy Buds (Discounted)", price: 4500 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
+]
+
+export const cooking =[
+  // { categoryid: "099", id: '901', itemname: "Discounted Item", price: 400 ,link: "https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,h_600,q_auto,w_600/l3skqjw9zd4wqw8ubfx2.gif"},
+  { categoryid: "099", id: '905', itemname: "Ramen", price: 5500 ,link: "https://1212928256.rsc.cdn77.org/content/images/thumbs/000/0007903_1000.png"},
+  { categoryid: "099", id: '906', itemname: "Buldak", price: 6500 ,link: "https://www.thatcutedish.com/wp-content/uploads/2021/06/buldak-noodles-1-e1624901576550.png"},
+  { categoryid: "099", id: '907', itemname: "Cheese Ramen", price: 4500 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
 ]
 // ../../assets/
 // ../../assets/

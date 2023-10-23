@@ -45,7 +45,7 @@ export default function CategorieList() {
           
         <Text style={styles.CategorieName} key={inedx}>{list.name}</Text>
         
-        <Card.Cover source={images[inedx]} style={{width:100,height:100}} />
+        <Card.Cover source={images[inedx]?images[inedx]:{uri:list.link}} style={{width:100,height:100}} />
         <Link style={styles.button} href={{ pathname: '/categoryItems', params: { name: list.id } }}>Go to Details</Link>
       </Card>   
         ))
