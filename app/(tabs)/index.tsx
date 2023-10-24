@@ -10,7 +10,8 @@ import MapView ,{Marker ,PROVIDER_GOOGLE  } from 'react-native-maps';
 import { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
 import Items  from '../componments/Items';
-
+import TabThreeScreen from '../componments/test';
+import { cooking, offers } from "../../data";
 interface Item {
   id: string;
   name: string;
@@ -145,7 +146,19 @@ export default function TabOneScreen() {
       />
       </ScrollView>
     </View>
-   
+    <View style={styles.Offers}>
+          <Text style={styles.OffersText}>Limited offers</Text>
+          <TabThreeScreen offers={offers} />
+        </View>
+
+        <View style={styles.Offers}>
+          <Text style={styles.OffersText}>Cooking offers</Text>
+          <TabThreeScreen offers={cooking} />
+        </View>
+        <View style={styles.Offers}>
+          <Text style={styles.OffersText}>Limited offers</Text>
+          <TabThreeScreen offers={offers} />
+        </View>
  
  
       </ScrollView>
@@ -164,6 +177,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     margin:3,   
   
+  }, OffersText: {
+    color: "red",
+    fontWeight: "600",
+    textAlign: "center",
+    fontSize: 33,
   },
   titleView:{
    
@@ -174,7 +192,10 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '80%',
+  },Offers: {
+    margin: 8,
   },
+
   texts:{
     color:'white',
     fontSize:18,

@@ -31,10 +31,7 @@ export default function TabTwoScreen() {
     console.log("Error in count of cart")
   })
  }
-
-
-
-  return (
+return (
     
       <View style={styles.container}>
        
