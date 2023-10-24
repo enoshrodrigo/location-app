@@ -9,7 +9,8 @@ import {
   Image,
   ImageBackground,
   Text,
-  ScrollView
+  ScrollView,
+  useColorScheme
 } from "react-native";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
@@ -21,7 +22,7 @@ import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 import { color } from 'react-native-elements/dist/helpers';
 import axios from 'axios';
 export default function TabTwoScreen() {
-    
+    const theme = useColorScheme()
   const [count ,setCount]= useState(0)
   const cart = useRef(null) 
  if(cart){
@@ -112,8 +113,8 @@ export default function TabTwoScreen() {
                   </View>
                 </View>
               </ImageBackground>
-              <Text style={styles.discount}>In Cart</Text>
-              <Text style={styles.coins}>Coins</Text>
+              <Text style={[styles.discount,theme==='dark'?{color:"white"}:{color:"black"}]}>In Cart</Text>
+              <Text style={[styles.coins,theme==='dark'?{color:"white"}:{color:"black"}]}>Coins</Text>
               <View style={styles.rect6}></View>
             </View>
             <View style={styles.rect3}>
@@ -205,9 +206,10 @@ export default function TabTwoScreen() {
     myProfile1: {
       // fontFamily: "roboto-regular",
       color: "rgba(255,255,255,1)",
-      fontSize: 21,
+      fontSize: 22,
       marginLeft: 107,
-      marginTop: 29
+      marginTop: 29,
+      fontWeight:"800",
     },
     icon8: {
       color: "rgba(239,241,243,1)",
@@ -392,16 +394,18 @@ export default function TabTwoScreen() {
       left: 114,
       position: "absolute",
       // fontFamily: "roboto-regular",
-      color: "white",
-      fontSize: 20
+      // color: "white",
+      fontSize: 22,
+      fontWeight:"800"
     },
     coins: {
       top: 380,
       left: 305,
       position: "absolute",
       // fontFamily: "roboto-regular",
-      color: "white",
-      fontSize: 20
+      // color: "white",
+      fontSize: 22,
+      fontWeight:"800"
     },
     rect6: {
       top: 442,

@@ -27,10 +27,7 @@ interface Item {
 const data: Item[] = [
   { id: '1', name: "Brown Shirt", price: '1000', link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
   { id: '2', name: "Brown Shirt", price: '1000', link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
-  { id: '3', name: "Brown Shirt", price: '1000', link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
-  { id: '4', name: "Brown Shirt", price: '1000', link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
-  { id: '5', name: "Brown Shirt", price: '1000', link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
-  { id: '6', name: "Brown Shirt", price: '1000', link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
+  { id: '3', name: "Brown Shirt", price: '1000', link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" }
 
 ];
 
@@ -38,9 +35,7 @@ const data2: Item[] = [
   { id: '1', name: "Brown Shirt", price: '1000', link: "https://www.adorainteriors.com/wp-content/uploads/2021/08/2-1.png" },
   { id: '2', name: "Brown Shirt", price: '1000', link: "https://www.adorainteriors.com/wp-content/uploads/2021/08/2-1.png" },
   { id: '3', name: "Brown Shirt", price: '1000', link: "https://www.adorainteriors.com/wp-content/uploads/2021/08/2-1.png" },
-  { id: '4', name: "Brown Shirt", price: '1000', link: "https://www.adorainteriors.com/wp-content/uploads/2021/08/2-1.png" },
-  { id: '5', name: "Brown Shirt", price: '1000', link: "https://www.adorainteriors.com/wp-content/uploads/2021/08/2-1.png" },
-  { id: '6', name: "Brown Shirt", price: '1000', link: "https://www.adorainteriors.com/wp-content/uploads/2021/08/2-1.png" },
+  
 
 ];
 
@@ -127,22 +122,46 @@ export default function TabOneScreen() {
         )}
       />
       
+
+
 {/* End dulara code */}
+
+
         <View style={styles.Offers}>
          
           <TabThreeScreen offers={offers} width={180} height={150} offerName="Limited Offers"/>
         </View>
 
+{/*   dulara code */}
 
-
+        <View style={styles.headingContainer}>
+        <Text style={styles.heading}>3+ Items for 2000</Text>
+      </View>
+      <FlatList
+        data={data}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <View style={styles.itemContainer}>
+            <Image
+              source={{ uri: item.link }}
+              style={styles.itemImage}
+            />
+            <View style={styles.itemDetails}>
+              <Text style={styles.itemName}>{item.name}</Text>
+              <Text style={styles.itemPrice}>RS.{item.price}</Text>
+            </View>
+          </View>
+        )}
+      />
+     {/* End dulara code */} 
 
         <View style={styles.Offers}>
        
-          <TabThreeScreen offers={cooking} width={180} height={150}  offerName="Cooking Offer"/>
+          <TabThreeScreen offers={cooking} width={180} height={150}  offerName="Food Offers"/>
         </View>
         <View style={styles.Offers}>
           
-          <TabThreeScreen offers={offers} width={135} height={99}  offerName="End Soon"/>
+          <TabThreeScreen offers={offers} width={135} height={99}  offerName="Ending Soon"/>
         </View>
       </ScrollView>
     </View>

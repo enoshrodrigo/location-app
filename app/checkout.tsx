@@ -15,6 +15,7 @@ import axios from 'axios';
 import CheckoutButton from './componments/checkoutButton';
 import FinalPrice from './componments/finalPrice';
 import CheckoutPopup from './componments/CheckoutPopup';
+import { color } from 'react-native-elements/dist/helpers';
 // type props ={
 //   id:string
 // }
@@ -53,6 +54,7 @@ export default function ModalScreen() {
   // const params = useLocalSearchParams();
   // const id = useRouter()
   // console.log(params.name);
+  const theme = useColorScheme()
  
   const [totalPrice,setTotal]=useState(0);
   const [Distance,setDistance]=useState(0);
@@ -203,10 +205,10 @@ export default function ModalScreen() {
  
 
 
-  <View style={styles.secondBox} >
-  <Text style={{color:"black",textAlign:"center",fontSize:16,fontWeight:"bold"}}>{cart.itemname}  </Text> 
+  <View style={[styles.secondBox,theme==='dark'?{backgroundColor:"white"}:{backgroundColor:"white"}]} >
+  <Text style={[{textAlign:"center",fontSize:16,fontWeight:"bold"},theme==='light'?{color:"black"}:{color:"white"}]}>{cart.itemname}  </Text> 
 
-<View style={{ flexDirection:'row',alignSelf:"stretch",justifyContent:"space-between",backgroundColor:"white",borderRadius:12}}>
+<View style={ [{flexDirection:'row',alignSelf:"stretch",justifyContent:"space-between",backgroundColor:"white",borderRadius:12,},theme=='light'?{backgroundColor:"white"}:{backgroundColor:"1f1f1f"}]}>
 
 <Text  style={{alignSelf:"center",margin:2,color:"black"}}>Rs.{(cart.price*cart.quntity).toFixed(2)}</Text>
 <View style={{flexDirection:"row",margin:2,backgroundColor:"white",borderRadius:12}}>
@@ -322,6 +324,7 @@ const styles = StyleSheet.create({
   },inBox:{ 
    
   // backgroundColor:"black",
+  borderWidth:2,
   borderRadius:8,
     flexDirection:'row',
     margin:9,
@@ -329,8 +332,8 @@ const styles = StyleSheet.create({
     padding:4, 
 },
 secondBox:{ 
+  // borderLeftWidth:2,
   flex:1,
-  backgroundColor:"#FFFFFF",
 borderRadius:12,
   marginLeft:2,
   marginRight:2,

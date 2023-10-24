@@ -45,8 +45,9 @@ export default function CategorieList() {
           
         <Text style={styles.CategorieName} key={inedx}>{list.name}</Text>
         
-        <Card.Cover source={images[inedx]?images[inedx]:{uri:list.link}} style={{width:100,height:100}} />
-        <Link style={styles.button} href={{ pathname: '/categoryItems', params: { name: list.id } }}>Go to Details</Link>
+        <Card.Cover source={images[inedx]?images[inedx]:{uri:list.link}} style={{width:110,height:110,alignSelf:"center"}} />
+        {/* <Link style={styles.button} href={{ pathname: '/categoryItems', params: { name: list.id } }}>Go to Details</Link> */}
+        <Link style={{ marginTop:18,alignSelf:"center", }} href={{ pathname: '/categoryItems', params: { name: list.id } }}><View style={styles.button}><Text style={{  textAlign:"center",color:"white", fontWeight:"600",fontSize:16 }}>Explore</Text></View></Link>
       </Card>   
         ))
       }
@@ -73,19 +74,25 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    borderRadius: 12,
-    marginTop:12,
+    borderRadius: 20,
+   width:90,
+    backgroundColor:"darkblue",
+    padding:8,
 
   },
 
   catInBox: {
     borderRadius: 11,
     backgroundColor: "white",
-    padding: 8,
+    padding: 18,
     margin: 8,
   },
   CategorieName:{
     color:'black',
-   textAlign:'center'
+   textAlign:'center',
+   fontSize:21,
+   marginTop:6,
+   marginBottom:8,
+   fontWeight:"600"
   }
 });

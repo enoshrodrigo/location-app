@@ -43,7 +43,7 @@ export default function OfferCard(list:list) {
         <Image source={{ uri: list.link }} style={{width:list.width,height:list.height,margin:2,alignSelf:"center",objectFit:"contain"}} />
         <Text style={styles.OfferPrice}>Rs.{list.price}</Text>
  
-        <Link style={{ marginTop:12,alignSelf:"center"}} href={{ pathname: '/categoryItems', params: { name: list.id } }}><View style={styles.button}><Text style={{  textAlign:"center",color:"white", fontWeight:"800", }}>Go to Details</Text></View></Link>
+        <Link style={{ marginTop:12,alignSelf:"center"}} href={{ pathname: '/categoryItems', params: { name: list.id } }}><View style={styles.button}><Text style={{  textAlign:"center",color:"white", fontWeight:"800", }}>Click To Get</Text></View></Link>
       </Card>   
         
    

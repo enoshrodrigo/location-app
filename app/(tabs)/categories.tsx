@@ -1,12 +1,13 @@
-import { LogBox, ScrollView, StyleSheet } from 'react-native';
+import { LogBox, ScrollView, StyleSheet,useColorScheme } from 'react-native';
 import { Button, Card } from 'react-native-paper';
 import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
+import { Text, View, useThemeColor } from '../../components/Themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CategorieList from '../componments/CategorieList';
 import { FontAwesome } from '@expo/vector-icons';
 
 export default function Categories() {
+  const theme =useColorScheme();
   return (
     <View style={styles.container}>
 
@@ -15,7 +16,7 @@ export default function Categories() {
                     size={25}
                     color="white"
                     // color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15,}}
+                    style={[{ marginRight: 15},theme==='dark'?{color:"white"}:{color:"black"}]}
                   /> Select your Favorite </Text>
       
 
@@ -25,7 +26,7 @@ export default function Categories() {
        <View style={styles.catBox}>
        
        
-           <ScrollView style={{margin:14}}>
+           <ScrollView style={{margin:12,marginBottom:32,}}>
       
       
           
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // justifyContent: 'center',
-    marginTop:18,
+    // marginTop:18,
   },
   catBox:{
   // backgroundColor:'white',
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     alignSelf: 'center',
-
+marginTop:11,
   },
   separator: {
     marginVertical: 30,
