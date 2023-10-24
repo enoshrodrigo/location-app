@@ -13,7 +13,9 @@ import { Link, router } from "expo-router";
     id:string,
     name:string,
     link:string,
-    price:number
+    price:number,
+    width:number,
+    height:number
   
    }
 export default function OfferCard(list:list) {
@@ -38,7 +40,7 @@ export default function OfferCard(list:list) {
           
         <Text style={styles.OfferName}  >{list.name}</Text>
         
-        <Image source={{ uri: list.link }} style={{width:120,height:120,margin:2,alignSelf:"center",objectFit:"contain"}} />
+        <Image source={{ uri: list.link }} style={{width:list.width,height:list.height,margin:2,alignSelf:"center",objectFit:"contain"}} />
         <Text style={styles.OfferPrice}>Rs.{list.price}</Text>
  
         <Link style={{ marginTop:12,alignSelf:"center"}} href={{ pathname: '/categoryItems', params: { name: list.id } }}><View style={styles.button}><Text style={{  textAlign:"center",color:"white", fontWeight:"800", }}>Go to Details</Text></View></Link>
@@ -53,9 +55,9 @@ export default function OfferCard(list:list) {
 
 const styles=  StyleSheet.create({
 card:{
-    backgroundColor:"white",
+    backgroundColor:"#F6F6F6",
     margin:4,
-    
+     
     borderRadius:8
 },
 innerCard:{
