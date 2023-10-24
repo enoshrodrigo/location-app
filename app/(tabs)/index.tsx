@@ -145,7 +145,7 @@ export default function TabOneScreen() {
         )}
       />
       </ScrollView>
-    </View>
+    
     <View style={styles.Offers}>
           <Text style={styles.OffersText}>Limited offers</Text>
           <TabThreeScreen offers={offers} />
@@ -159,7 +159,7 @@ export default function TabOneScreen() {
           <Text style={styles.OffersText}>Limited offers</Text>
           <TabThreeScreen offers={offers} />
         </View>
- 
+ </View>
  
       </ScrollView>
     </View>
@@ -170,6 +170,7 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    
 
   },
   title: {
