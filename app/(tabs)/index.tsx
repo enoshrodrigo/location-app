@@ -26,17 +26,17 @@ export default function TabOneScreen() {
         <Items /> 
         <ScrollView>
         <View style={styles.Offers}>
-          <Text style={styles.OffersText}>Limited offers</Text>
-          <TabThreeScreen offers={offers} />
+         
+          <TabThreeScreen offers={offers} width={180} height={150} offerName="Limited Offer"/>
         </View>
 
         <View style={styles.Offers}>
-          <Text style={styles.OffersText}>Cooking offers</Text>
-          <TabThreeScreen offers={cooking} />
+       
+          <TabThreeScreen offers={cooking} width={180} height={150}  offerName="Cooking Offer"/>
         </View>
         <View style={styles.Offers}>
-          <Text style={styles.OffersText}>Limited offers</Text>
-          <TabThreeScreen offers={offers} />
+          
+          <TabThreeScreen offers={offers} width={135} height={99}  offerName="End Soon"/>
         </View>
       </ScrollView>
     </View>
