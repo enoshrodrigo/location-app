@@ -55,7 +55,7 @@ export default function OfferCard(list:list) {
 
 const styles=  StyleSheet.create({
 card:{
-    backgroundColor:"#F6F6F6",
+    // backgroundColor:"#F6F6F6",
     margin:4,
      
     borderRadius:8
@@ -75,7 +75,7 @@ inBox: {
 
   box: {
     borderRadius: 11,
-    backgroundColor: "green",
+    // backgroundColor: "green",
     padding: 8,
     margin: 8,
   },

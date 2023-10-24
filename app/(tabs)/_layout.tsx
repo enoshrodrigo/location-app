@@ -16,7 +16,7 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(9);
   const cart = useRef(null)
   
  if(cart){
