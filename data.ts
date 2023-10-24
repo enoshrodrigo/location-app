@@ -139,13 +139,17 @@ export const offers =[
   { categoryid: "099", id: '902', itemname: "Airpod", price: 5500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios15-iphone13-pro-airpods-setup-animation-steps.gif"},
   { categoryid: "099", id: '903', itemname: "Airpods Pro", price: 6500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios14-3-iphone11-pro-connect-airpods-max-animation.gif"},
   { categoryid: "099", id: '904', itemname: "Galaxy Buds (Discounted)", price: 4500 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
+  { categoryid: "099", id: '905', itemname: "Galaxy Buds (Discounted)", price: 4500 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
+
 ]
 
 export const cooking =[
   // { categoryid: "099", id: '901', itemname: "Discounted Item", price: 400 ,link: "https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,h_600,q_auto,w_600/l3skqjw9zd4wqw8ubfx2.gif"},
-  { categoryid: "0100", id: '905', itemname: "Ramen", price: 5500 ,link: "https://1212928256.rsc.cdn77.org/content/images/thumbs/000/0007903_1000.png"},
-  { categoryid: "0100", id: '906', itemname: "Buldak", price: 6500 ,link: "https://www.thatcutedish.com/wp-content/uploads/2021/06/buldak-noodles-1-e1624901576550.png"},
-  { categoryid: "0100", id: '907', itemname: "Cheese Ramen", price: 4500 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
+  { categoryid: "0100", id: '906', itemname: "Ramen", price: 5500 ,link: "https://1212928256.rsc.cdn77.org/content/images/thumbs/000/0007903_1000.png"},
+  { categoryid: "0100", id: '907', itemname: "Buldak", price: 6500 ,link: "https://www.thatcutedish.com/wp-content/uploads/2021/06/buldak-noodles-1-e1624901576550.png"},
+  { categoryid: "0100", id: '908', itemname: "Cheese Ramen", price: 4500 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
+  { categoryid: "0100", id: '909', itemname: "Cheese Ramen", price: 4500 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
+
 ]
 // ../../assets/
 // ../../assets/
