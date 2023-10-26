@@ -193,15 +193,13 @@ export default function ModalScreen() {
         {
           CheckOutItems.map((cart,index)=>(
            
-<View>
+<View key={index}>
  
 
-<View style={styles.inBox} key={index}>
- 
-  {/* <Card.Cover source={{ uri: cart.link}} style={styles.PicBox} key={index} /> */}
+<View style={styles.inBox} > 
   <Image source={{ uri: cart.link }} style={styles.PicBox} />
 
-  {/* <Text>Name</Text> */}
+ 
  
 
 
@@ -340,9 +338,10 @@ borderRadius:12,
   justifyContent:"space-between",
 },
   title: {
-    fontSize: 20,
+    fontSize: 29,
     fontWeight: 'bold',
     margin:12,
+    alignSelf:"center"
    
     
   },

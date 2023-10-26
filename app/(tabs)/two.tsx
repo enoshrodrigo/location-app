@@ -150,10 +150,10 @@ export default function TabTwoScreen() {
                       ry={32}
                     ></Ellipse>
                   </Svg>
-                  <MaterialIconsIcon
-                    name="favorite-border"
+                  <EntypoIcon
+                    name="credit"
                     style={styles.icon9}
-                  ></MaterialIconsIcon>
+                  ></EntypoIcon>
                 </View>
                 <Text style={styles.loremIpsum3}>6</Text>
               </View>

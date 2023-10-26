@@ -36,6 +36,7 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
       }}
+    
     >
       <Tabs.Screen
         name="index"
@@ -115,6 +116,13 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
         }}
       />
+      {/* <Tabs.Screen
+        name="Cart"
+        options={{
+          title: "Cart",
+          tabBarIcon: ({ color }) => <TabBarIcon name="shopping-cart" color={color} />,
+        }}
+      /> */}
     </Tabs>
   );
 }
