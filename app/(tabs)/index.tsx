@@ -16,6 +16,7 @@ import { useFonts } from "expo-font";
 import { Image } from "react-native-elements";
 import { color } from "framer-motion";
 import { FontAwesome } from "@expo/vector-icons";
+import { Link } from "expo-router";
 interface Item {
   id: string;
   name: string;
@@ -117,6 +118,8 @@ export default function TabOneScreen() {
             <View style={styles.itemDetails}>
               <Text style={styles.itemName}>{item.name}</Text>
               <Text style={styles.itemPrice}>{item.price}</Text>
+        <Link style={{ margin:8,alignSelf:"flex-end", }} href={{ pathname: '/categoryItems', params: { name: 'list.id' } }}><View style={styles.button}><Text style={{  textAlign:"center",color:"black", fontWeight:"700",fontSize:16 }}>Buy now</Text></View></Link>
+
             </View>
           </View>
         )}
@@ -149,6 +152,9 @@ export default function TabOneScreen() {
             <View style={styles.itemDetails}>
               <Text style={styles.itemName}>{item.name}</Text>
               <Text style={styles.itemPrice}>RS.{item.price}</Text>
+ 
+        <Link style={{ margin:8,alignSelf:"flex-end", }} href={{ pathname: '/categoryItems', params: { name: 'list.id' } }}><View style={styles.button}><Text style={{  textAlign:"center",color:"black", fontWeight:"700",fontSize:16 }}>Explore</Text></View></Link>
+
             </View>
           </View>
         )}
@@ -176,7 +182,13 @@ const styles = StyleSheet.create({
     margin: 8,
   },
   
-  
+  button:{
+    borderRadius: 20,
+    width:88,
+    backgroundColor:"lightblue",
+    padding:8,
+   
+  },
   titleView: {
     alignItems: "center",
     justifyContent: "center",
@@ -278,17 +290,18 @@ const styles = StyleSheet.create({
   itemDetails: {
     flex: 1,
     backgroundColor:"black",
-
+  
     borderRadius:12
   },
   itemName: {
     fontSize: 18,
     fontWeight: 'bold',
     alignSelf:"center",
-    marginTop:4
+    marginTop:4,
+    color:"white",
   },
   itemPrice: {
-    fontSize: 16,
+    fontSize: 18,
     color: 'white',
     // alignSelf:"baseline"
   },
