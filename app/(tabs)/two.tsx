@@ -84,7 +84,7 @@ export default function TabTwoScreen() {
                 </View>
                 <View style={styles.dewmiPerera1StackStack}>
                   <View style={styles.dewmiPerera1Stack}>
-                    <Text style={styles.dewmiPerera1}>Dewmi Perera</Text>
+                    <Text style={styles.dewmiPerera1}>Dewni Perera</Text>
                     <ImageBackground
                       style={styles.rect2}
                       imageStyle={styles.rect2_imageStyle}
@@ -106,7 +106,7 @@ export default function TabTwoScreen() {
                     </View>
                     <View style={styles.myOrders1Row}>
                       <Text style={styles.myOrders1}>My Orders</Text>
-                      <Text style={styles.sopping1}>Sopping</Text>
+                      <Text style={styles.sopping1}>Shop   </Text>
                       <Text style={styles.wishList1}>WishList</Text>
                       <Text style={styles.notifications1}>Notifications</Text>
                     </View>
@@ -170,7 +170,7 @@ export default function TabTwoScreen() {
           </View>
           <View style={styles.rect5Stack}>
             <View style={styles.rect5}>
-              <Text style={styles.newMassages}>New Massages</Text>
+              <Text style={styles.newMassages}>New Messages</Text>
             </View>
             <Image
               source={require("../../assets/profile/shopping.png")}
@@ -225,7 +225,7 @@ export default function TabTwoScreen() {
       height: 26,
       width: 19,
       marginLeft: 14,
-      marginTop: 10
+      marginTop: 10,
     },
     icon6Row: {
       height: 55,
@@ -258,12 +258,13 @@ export default function TabTwoScreen() {
       marginLeft: 211
     },
     dewmiPerera1: {
-      top: 3,
-      left: 86,
-      position: "absolute",
+      // top: 3,
+      // left: 86,
+      // position: "absolute",
       // fontFamily: "roboto-regular",
       color: "rgba(255,251,251,1)",
-      fontSize: 16
+      fontSize: 16,
+      alignSelf:'center'
     },
     rect2: {
       top: 0,

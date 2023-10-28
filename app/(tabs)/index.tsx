@@ -19,6 +19,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import axios from "axios";
 import { threeItemsOffer,Todayspecial,carouselData } from "../../data";
+import RegisterScreen from "../RegisterForm";
 interface Item {
   id: string;
   name: string;
@@ -26,7 +27,7 @@ interface Item {
   link: string;
 }
 
-
+  
  
 
  
@@ -86,7 +87,7 @@ useEffect(  ()=>{
   return (
     <View style={styles.container}>
        <View style={styles.titleView}>
-          <Text style={styles.Mtexts}>U STORE</Text>
+          <Text style={styles.Mtexts}>U-Store</Text>
         </View>
      <View >
        <View style={[styles.searchContainer,colorScheme==='dark'?{backgroundColor:"white"}:{backgroundColor:"white"}]}>
@@ -409,6 +410,7 @@ const styles = StyleSheet.create({
     marginTop:4,
     fontWeight:'500',
     color:"white",
+    
   },
   itemPrice: {
     fontSize: 18,

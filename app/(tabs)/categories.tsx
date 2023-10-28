@@ -17,7 +17,7 @@ export default function Categories() {
                     color="white"
                     // color={Colors[colorScheme ?? 'light'].text}
                     style={[{ marginRight: 15},theme==='dark'?{color:"white"}:{color:"black"}]}
-                  /> Select your Favorite </Text>
+                  /> Select your Favourite </Text>
       
 
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />

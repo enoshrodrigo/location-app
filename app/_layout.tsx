@@ -1,12 +1,13 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { SplashScreen, Stack } from 'expo-router';
+import { Link, SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
-import { useColorScheme, View, Text, TextInput, Button,StyleSheet  ,   Image, SafeAreaView, TouchableOpacity, Dimensions,KeyboardAvoidingView, Platform} from 'react-native';
+import { useColorScheme, View, Text, TextInput, Button,StyleSheet  ,   Image, SafeAreaView, TouchableOpacity, Dimensions,KeyboardAvoidingView, Platform,Alert} from 'react-native';
 import React, { useState,} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView } from 'react-native-gesture-handler';
+ 
 export {
   // Catch any errors thrown by the Layout component.
   ErrorBoundary,
@@ -39,12 +40,234 @@ export default function RootLayout() {
 
   // Implement authentication state and logic
   const [authenticated, setAuthenticated] = useState(false);
+  const [Register, setRegister] = useState(false);
+
 
   if (!loaded) {
     return null;
   }
+  function LoginScreen({ onLogin }: any) {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+  
+    const handleLogin = () => {
+      if (email === '123' && password === '123') {
+         alert("Login Succesfull")
+        onLogin(); // Set authentication status to true.
+      } else {
+        // Display an error message or take appropriate action for failed login.
+        alert("Invalid details")
+      } 
+    };
+  
+    
+  
+    return (
+     
+      <KeyboardAvoidingView
+      style={{flex:1}}
+        behavior={Platform.OS === 'ios' ? 'padding' : null}
+      >
+        <ScrollView>
+          <SafeAreaView style={styles.container}>
+            <View style={styles.content}>
+        
+              <Text style={styles.bold}>U-Store</Text>
+              <Text style={styles.instruction}>Welcome!</Text>
+  
+              {/* <Text style={[styles.instruction,{marginBottom:8}]}>Log in or sign up to get started.</Text> */}
+  
+            <View style={styles.picBox}>
+              <Image
+                    source={require("../assets/images/login/load.webp")}
+                    style={styles.image}
+               />
+            </View>
+        
+              <TextInput
+              style={styles.input2}
+              placeholder="Email"
+              value={email}
+              onChangeText={(text) => setEmail(text)}
+            />
+            <TextInput
+              style={styles.input2}
+              placeholder="Password"
+              secureTextEntry={true}
+              value={password}
+              onChangeText={(text) => setPassword(text)}
+            />
+                {/* // Display login and signup buttons with a small space in between */}
+                <View style={styles.buttonContainer}>
+                  <TouchableOpacity
+                    style={[styles.button, styles.loginButton]}
+                    onPress={handleLogin}
+                  >
+                    <Text style={styles.buttonText}>Login</Text>
+                  </TouchableOpacity>
+                  <View style={styles.buttonSpacer} />
+                  <TouchableOpacity
+                    style={[styles.button, styles.signupButton]}
+                  onPress={()=>setRegister(true)}
+  
+  >
+                    <Text style={styles.buttonText}>Signup</Text>
+                  </TouchableOpacity>
+                </View>
+        
+            </View>
+            <StatusBar style="auto" />
+          </SafeAreaView>
+        </ScrollView>
+      </KeyboardAvoidingView>
+    );
+  }
+  
+function RegisterScreen({ Onreg }: any) {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [gender, setGender] = useState('');
+  const [dob, setDob] = useState('');
+  // const [language, setLanguage] = useState('');
+  const [address, setAddress] = useState('');
+  const [phone, setPhone] = useState('');
 
-  return authenticated ? <MainContent /> : <LoginScreen onLogin={() => setAuthenticated(true)} />;
+  const handleRegistration = () => {
+    // You can implement your registration logic here
+    console.log('Registration Data:', {
+      name,
+      email,
+      password,
+      gender,
+      dob,
+     
+      address,
+      phone,
+    });
+
+    // Clear input fields
+    setName('');
+    setEmail('');
+    setPassword('');
+    setGender('');
+    setDob('');
+    // setLanguage('');
+    setAddress('');
+    setPhone('');
+
+    // Show success message
+    Alert.alert('Successfully Registered', 'You are now registered!', [{ text: 'OK' }]);
+    setRegister(false)
+  };
+
+  return (
+    
+      <KeyboardAvoidingView style={styles2.container}>
+      
+         
+          <Text style={styles2.title}>Register Yourself !!!</Text>
+          <TextInput
+            style={styles2.input}
+            placeholder="Name"
+            onChangeText={(text) => setName(text)}
+            value={name}
+          />
+          <TextInput
+            style={styles2.input}
+            placeholder="Email"
+            onChangeText={(text) => setEmail(text)}
+            value={email}
+            keyboardType="email-address"
+          />
+          <TextInput
+            style={styles2.input}
+            placeholder="Password"
+            onChangeText={(text) => setPassword(text)}
+            value={password}
+            secureTextEntry={true}
+          />
+          {/* Add more input fields for gender, dob, language, address, and phone */}
+          <TextInput
+            style={styles2.input}
+            placeholder="Gender"
+            onChangeText={(text) => setGender(text)}
+            value={gender}
+          />
+          <TextInput
+            style={styles2.input}
+            placeholder="Date of Birth"
+            onChangeText={(text) => setDob(text)}
+            value={dob}
+          />
+          {/* <TextInput
+            style={styles2.input}
+            placeholder="Language"
+            onChangeText={(text) => setLanguage(text)}
+            value={language}
+          /> */}
+          <TextInput
+            style={styles2.input}
+            placeholder="Address"
+            onChangeText={(text) => setAddress(text)}
+            value={address}
+          />
+          <TextInput
+            style={styles2.input}
+            placeholder="Phone Number"
+            onChangeText={(text) => setPhone(text)}
+            value={phone}
+            keyboardType="phone-pad"
+          />
+          <TouchableOpacity style={styles2.button} onPress={handleRegistration}>
+            <Text style={styles2.buttonText}>Register</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles2.button} onPress={() => setRegister(false)}>
+            <Text style={styles2.buttonText}>Back</Text>
+          </TouchableOpacity>
+        
+        </KeyboardAvoidingView>
+       
+    
+  );
+}
+
+const styles2 = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 20,
+  },
+  input: {
+    width: '100%',
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 5,
+    marginBottom: 10,
+    paddingHorizontal: 10,
+  },
+  button: {
+    backgroundColor: 'blue',
+    padding: 10,
+    borderRadius: 5,
+    width: '99%',
+    alignItems: 'center',
+    margin: 12,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+});
+
+return !Register?  authenticated ? <MainContent /> : <LoginScreen onLogin={() => setAuthenticated(true)} />:<RegisterScreen  Onreg={()=>{setRegister(true)}}/>
+
 }
 
 function MainContent() {
@@ -56,86 +279,20 @@ function MainContent() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="checkout" options={{ presentation: 'modal' }} />
         <Stack.Screen name="categoryItems" options={{ presentation: 'modal' }} /> 
-        {/* <Stack.Screen name="categoryItems" options={{ presentation: 'modal' }} /> */}
+        {/* <Stack.Screen name="RegisterScreen" options={{ presentation: 'modal' }} /> */}
 
       </Stack>
     </ThemeProvider>
   );
 } 
 
-function LoginScreen({ onLogin }: any) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    if (email === '123' && password === '123') {
-       alert("Login Succesfull")
-      onLogin(); // Set authentication status to true.
-    } else {
-      // Display an error message or take appropriate action for failed login.
-      alert("Invalid details")
-    } 
-  };
 
-  return (
-   
-    <KeyboardAvoidingView
-    style={{flex:1}}
-      behavior={Platform.OS === 'ios' ? 'padding' : null}
-    >
-      <ScrollView>
-        <SafeAreaView style={styles.container}>
-          <View style={styles.content}>
-      
-            <Text style={styles.bold}>Welcome!</Text>
-            <Text style={styles.instruction}>Please</Text>
 
-            <Text style={[styles.instruction,{marginBottom:8}]}>Log in or sign up to get started.</Text>
 
-          <View style={styles.picBox}>
-            <Image
-                  source={require("../assets/images/login/load.webp")}
-                  style={styles.image}
-             />
-          </View>
-      
-            <TextInput
-            style={styles.input2}
-            placeholder="Email"
-            value={email}
-            onChangeText={(text) => setEmail(text)}
-          />
-          <TextInput
-            style={styles.input2}
-            placeholder="Password"
-            secureTextEntry={true}
-            value={password}
-            onChangeText={(text) => setPassword(text)}
-          />
-              {/* // Display login and signup buttons with a small space in between */}
-              <View style={styles.buttonContainer}>
-                <TouchableOpacity
-                  style={[styles.button, styles.loginButton]}
-                  onPress={handleLogin}
-                >
-                  <Text style={styles.buttonText}>Login</Text>
-                </TouchableOpacity>
-                <View style={styles.buttonSpacer} />
-                <TouchableOpacity
-                  style={[styles.button, styles.signupButton]}
-                  onPress={()=>{alert('Please contact admin to get you login details');}}
-                >
-                  <Text style={styles.buttonText}>Signup</Text>
-                </TouchableOpacity>
-              </View>
-      
-          </View>
-          <StatusBar style="auto" />
-        </SafeAreaView>
-      </ScrollView>
-    </KeyboardAvoidingView>
-  );
-}
+
+  
+
 
 const window = Dimensions.get('window');
 
@@ -179,6 +336,7 @@ const styles = StyleSheet.create({
     borderWidth:1,
     borderRadius:12,
     margin:16, 
+    height:214
     
   
 
@@ -188,16 +346,23 @@ const styles = StyleSheet.create({
     color: "#121212",
     fontSize: 50,
     top:0,
-    fontWeight:"700",
+    fontWeight:"800",
     textAlign: "center",
     marginBottom: 0,
+    fontFamily:'SpaceMono',
+    letterSpacing:12,
+    alignSelf:"center"
+
   },
   instruction: {
-    fontSize: 16,
+    fontSize: 24,
     color: "#555",
     textAlign: "center",
+    alignSelf:"center",
     // marginBottom: 20,
-    fontFamily:'SpaceMono'
+    // fontFamily:'SpaceMono'
+    fontWeight:'600',
+    letterSpacing:8
   },
   loggedInText: {
     fontSize: 20,

@@ -7,7 +7,7 @@ export const categoriesNamesData = [
   { id:'055', name: "Toys ",link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp"  },
   { id:'066', name: "Sports", link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
   { id:'077', name: "Books", link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
-  { id:'088', name: "Jewelry ", link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
+  { id:'088', name: "Jewellry ", link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
   { id:'099', name: "Deals",link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp"  },
   { id:'0100', name: "Foods",link: "https://www.royacshop.com/wp-content/uploads/2017/12/Nigerian-Snacks-247x296.png"  },
 

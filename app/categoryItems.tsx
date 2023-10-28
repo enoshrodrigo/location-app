@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     margin:12,
+    textAlign:"center",
     
   },
   disabledButton: {
