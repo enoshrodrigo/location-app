@@ -34,6 +34,8 @@ export const Items = [
       { categoryid: "022", id: '203', itemname: "Headphones", price: 8500, link: "https://i5.walmartimages.com/seo/Beats-Studio-Pro-Wireless-Headphones-Black_482fa5f9-4478-43a6-84ef-5abc2de71109.2d23bdd7708ce99a60e99d6a3750171c.png" },
       { categoryid: "022", id: '204', itemname: "Laptop", price: 150000, link: "https://wish.lk/wp-content/uploads/2022/10/Macbook-Pro-M2-Space-Gray.png" },
       { categoryid: "022", id: '205', itemname: "Tablet", price: 55000, link: "https://p4-ofp.static.pub/fes/cms/2023/03/28/7dch8vg9lz0tzeg74u3x9paoln4o8z319478.png" },
+  { categoryid: "022", id: '8788', itemname: "Meta Quest", price: 25000 ,link: "https://arborxr.com/wp-content/uploads/2022/11/enterprise-review-of-meta-quest-pro-headset-image-e1668009484272.webp"},
+
     ]
   },
   {
@@ -78,7 +80,11 @@ export const Items = [
     name: "Sports",
     items: [
       { categoryid: "066", id: '601', itemname: "Soccer Ball", price: 2850 ,link: "https://spaces-cdn.clipsafari.com/svy2jz86tko9dl5qbyik1u8x41k0"},
-      { categoryid: "066", id: '602', itemname: "Tennis Racket", price: 2999 ,link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyPBQXv3g7CmGjazUA0pFoBmpNGdIi2jFljg&usqp=CAU"},
+      { categoryid: "066", id: '5458', itemname: "Tennis Racket", price: 2999 ,link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyPBQXv3g7CmGjazUA0pFoBmpNGdIi2jFljg&usqp=CAU"},
+      { categoryid: "066", id: '5459', itemname: "Tennis Balls", price: 1565 ,link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT79jCPfECd2b-1M0S1xo_C2X76uCJgKeAKpQ&usqp=CAU"},
+      { categoryid: "066", id: '5565', itemname: "Cricket Bat", price: 2999 ,link: "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/GTEEGTM6K1/SjQfWkcWBq-GTEM6.png"},
+      { categoryid: "066", id: '2564', itemname: "Leather Ball", price: 2999 ,link: "https://images.jdmagicbox.com/quickquotes/images_main/Red-Leather-Cricket-Ball-343145068-2185z.jpg"},
+
       // Add more sports items here
       // https://g4r5b6f7.stackpathcdn.com/wp-content/uploads/2021/09/Blade_98_v8_16x19-1.png
     ]
@@ -109,6 +115,7 @@ export const Items = [
       { categoryid: "099", id: '902', itemname: "Airpod", price: 5500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios15-iphone13-pro-airpods-setup-animation-steps.gif"},
       { categoryid: "099", id: '903', itemname: "Airpods Pro", price: 6500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios14-3-iphone11-pro-connect-airpods-max-animation.gif"},
       { categoryid: "099", id: '904', itemname: "Galaxy Buds (Discounted)", price: 4500 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
+      { categoryid: "022", id: '204', itemname: "Laptop", price: 150000, link: "https://wish.lk/wp-content/uploads/2022/10/Macbook-Pro-M2-Space-Gray.png" },
 
       // Add more deal items here
     ]
@@ -117,9 +124,17 @@ export const Items = [
     id: '0100',
     name: "Food",
     items: [
-  { categoryid: "0100", id: '905', itemname: "Ramen", price: 990 ,link: "https://1212928256.rsc.cdn77.org/content/images/thumbs/000/0007903_1000.png"},
-  { categoryid: "0100", id: '906', itemname: "Buldak", price: 750 ,link: "https://www.thatcutedish.com/wp-content/uploads/2021/06/buldak-noodles-1-e1624901576550.png"},
-  { categoryid: "0100", id: '907', itemname: "Cheese Ramen", price: 550 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
+  { categoryid: "0100", id: '3500', itemname: "Oreo", price: 750 ,link: "https://www.icecream.com/content/dam/dreyersgrandicecreaminc/us/en/licensed/oreo/packaging/OREO_Sandwich_4ct_15.png"},
+  { categoryid: "0100", id: '9010', itemname: "Nutella", price: 680 ,link: "https://www.nutella.com/in/sites/nutella20_in/files/2021-04/new-350g.png?t=1697794407"},
+  { categoryid: "0100", id: '906', itemname: "Ramen", price: 550 ,link: "https://1212928256.rsc.cdn77.org/content/images/thumbs/000/0007903_1000.png"},
+  { categoryid: "0100", id: '9011', itemname: "Doritos", price: 850 ,link: "https://static.wikia.nocookie.net/supermarioglitchy4/images/5/5e/NachoCheese.png/revision/latest?cb=20230414124037"},
+  { categoryid: "0100", id: '909', itemname: "Kimchi", price: 850 ,link: "https://static.wixstatic.com/media/ce5554_1cf03d5bb2664363921a22edc015c599~mv2.png/v1/fill/w_340,h_320,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/kimchi%20500g.png"},
+  { categoryid: "0100", id: '907', itemname: "Buldak", price: 650 ,link: "https://www.thatcutedish.com/wp-content/uploads/2021/06/buldak-noodles-1-e1624901576550.png"},
+  { categoryid: "0100", id: '908', itemname: "Cheese Ramen", price: 680 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
+  { categoryid: "0100", id: '9012', itemname: "Butter Buns", price: 890 ,link: "https://images.squarespace-cdn.com/content/v1/5ccc9bada9ab950174f0b374/1557639722249-2B5MPRLJS72LTJZMPK01/product_bunsrolls_butterbuns_890x1000px.png?format=1000w"},
+  { categoryid: "0100", id: '50554', itemname: "Oreo Pack", price: 1400 ,link: "https://www.bigbasket.com/media/uploads/p/xxl/1215754_11-cadbury-oreo-chocolate-creme-biscuit-jumbo-pack.jpg"},
+  { categoryid: "0100", id: '7887', itemname: "Snackcrate", price: 2300 ,link: "https://candybar.snackcrate.com/wp-content/uploads/2021/09/Oreo_Hero_Collection_Page.png"},
+
 
 
       // Add more deal items here
@@ -135,19 +150,34 @@ export const images=[
 
 export const offers =[
   // { categoryid: "099", id: '901', itemname: "Discounted Item", price: 400 ,link: "https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,h_600,q_auto,w_600/l3skqjw9zd4wqw8ubfx2.gif"},
-  { categoryid: "099", id: '902', itemname: "Airpod", price: 5500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios15-iphone13-pro-airpods-setup-animation-steps.gif"},
+  { categoryid: "022", id: '8788', itemname: "Meta Quest Pro", price: 25000 ,link: "https://arborxr.com/wp-content/uploads/2022/11/enterprise-review-of-meta-quest-pro-headset-image-e1668009484272.webp"},
+ 
+  { categoryid: "099", id: '902', itemname: "Airpod", price: 12000 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios15-iphone13-pro-airpods-setup-animation-steps.gif"},
+  { categoryid: "099", id: '903', itemname: "Airpods Pro", price: 25000 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios14-3-iphone11-pro-connect-airpods-max-animation.gif"},
+  { categoryid: "099", id: '904', itemname: "Galaxy Buds (Discounted)", price: 5800 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
+  
+]
+
+export const endingSoon =[
+  // { categoryid: "099", id: '901', itemname: "Discounted Item", price: 400 ,link: "https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,h_600,q_auto,w_600/l3skqjw9zd4wqw8ubfx2.gif"},
+  { categoryid: "022", id: '205', itemname: "Tablet", price: 55000, link: "https://p4-ofp.static.pub/fes/cms/2023/03/28/7dch8vg9lz0tzeg74u3x9paoln4o8z319478.png" },
+  { categoryid: "0100", id: '7887', itemname: "Snackcrate", price: 2300 ,link: "https://candybar.snackcrate.com/wp-content/uploads/2021/09/Oreo_Hero_Collection_Page.png"},
   { categoryid: "099", id: '903', itemname: "Airpods Pro", price: 6500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios14-3-iphone11-pro-connect-airpods-max-animation.gif"},
-  { categoryid: "099", id: '904', itemname: "Galaxy Buds (Discounted)", price: 4500 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
-  { categoryid: "099", id: '905', itemname: "Galaxy Buds (Discounted)", price: 4500 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
+  { categoryid: "0100", id: '3500', itemname: "Oreo", price: 750 ,link: "https://www.icecream.com/content/dam/dreyersgrandicecreaminc/us/en/licensed/oreo/packaging/OREO_Sandwich_4ct_15.png"},
+  { categoryid: "011", id: '104', itemname: "Sneakers", price: 3500, link: "https://specials-images.forbesimg.com/imageserve/64650677981fc0e76246245d/On-Cloud-5-Sneaker/960x0.jpg?cropX1=0&cropX2=1400&cropY1=273&cropY2=1323" },
   
 ]
 
 export const cooking =[
   // { categoryid: "099", id: '901', itemname: "Discounted Item", price: 400 ,link: "https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,h_600,q_auto,w_600/l3skqjw9zd4wqw8ubfx2.gif"},
-  { categoryid: "0100", id: '906', itemname: "Ramen", price: 5500 ,link: "https://1212928256.rsc.cdn77.org/content/images/thumbs/000/0007903_1000.png"},
-  { categoryid: "0100", id: '907', itemname: "Buldak", price: 6500 ,link: "https://www.thatcutedish.com/wp-content/uploads/2021/06/buldak-noodles-1-e1624901576550.png"},
-  { categoryid: "0100", id: '908', itemname: "Cheese Ramen", price: 4500 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
-  { categoryid: "0100", id: '909', itemname: "Cheese Ramen", price: 4500 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
+  { categoryid: "0100", id: '50554', itemname: "Oreo Pack", price: 1400 ,link: "https://www.bigbasket.com/media/uploads/p/xxl/1215754_11-cadbury-oreo-chocolate-creme-biscuit-jumbo-pack.jpg"},
+  { categoryid: "0100", id: '9010', itemname: "Nutella", price: 680 ,link: "https://www.nutella.com/in/sites/nutella20_in/files/2021-04/new-350g.png?t=1697794407"},
+  { categoryid: "0100", id: '906', itemname: "Ramen", price: 550 ,link: "https://1212928256.rsc.cdn77.org/content/images/thumbs/000/0007903_1000.png"},
+
+  { categoryid: "0100", id: '909', itemname: "Kimchi", price: 850 ,link: "https://static.wixstatic.com/media/ce5554_1cf03d5bb2664363921a22edc015c599~mv2.png/v1/fill/w_340,h_320,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/kimchi%20500g.png"},
+  { categoryid: "0100", id: '907', itemname: "Buldak", price: 650 ,link: "https://www.thatcutedish.com/wp-content/uploads/2021/06/buldak-noodles-1-e1624901576550.png"},
+  { categoryid: "0100", id: '908', itemname: "Cheese Ramen", price: 680 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
+
 
 ]
 export  const carouselData = [
@@ -158,9 +188,9 @@ export  const carouselData = [
   'https://cdn.singpromos.com/wp-content/uploads/2022/11/Nike-7-Nov-2022.jpg',
 ];
 export const threeItemsOffer=[
-  { categoryid: "055", id: '1000', itemname: "Toy Car", price: 1400, link: "https://cdn.shopify.com/s/files/1/0602/9692/1333/files/Bugatti_yellow_car_1_1.png?v=1641937690"},
-  { categoryid: "055", id: '1001', itemname: "Toy Car", price: 1400, link: "https://cdn.shopify.com/s/files/1/0602/9692/1333/files/Bugatti_yellow_car_1_1.png?v=1641937690"},
-  { categoryid: "055", id: '1002', itemname: "Toy Car", price: 1400, link: "https://cdn.shopify.com/s/files/1/0602/9692/1333/files/Bugatti_yellow_car_1_1.png?v=1641937690"},
+  { categoryid: "055", id: '1000', itemname: "Pikachu", price: 2000, link: "https://image.smythstoys.com/images/main-categories/toys/toys-action-figures-2023.png"},
+  { categoryid: "055", id: '1001', itemname: "Toy Set", price: 2000, link: "https://unlimitedtoyclub.com/cdn/shop/files/final-opt_1.webp?v=1688736720"},
+  { categoryid: "055", id: '1002', itemname: "To Set Pack", price: 2000, link: "https://www.lego.com/cdn/cs/set/assets/bltd099cc8c436240fb/71039.png?fit=crop&quality=80&width=320&height=320&dpr=1"},
 
 ]
 

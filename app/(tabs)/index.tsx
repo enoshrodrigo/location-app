@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import * as Location from "expo-location";
 import Items from "../componments/Items";
 import TabThreeScreen from "../componments/test";
-import { cooking, offers } from "../../data";
+import { cooking, endingSoon, offers } from "../../data";
 import { useFonts } from "expo-font";
 import { Image } from "react-native-elements";
 // import { color } from "framer-motion";
@@ -259,7 +259,7 @@ useEffect(  ()=>{
         </View>
         <View style={styles.Offers}>
           
-          <TabThreeScreen offers={offers} width={135} height={99}  offerName="Ending Soon"/>
+          <TabThreeScreen offers={endingSoon} width={135} height={99}  offerName="Ending Soon"/>
         </View>
       </ScrollView>
     </View>
@@ -382,7 +382,7 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     flexDirection: 'row',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#ffffff',
     padding: 8,
     borderRadius: 5,
     marginBottom: 12,
@@ -395,7 +395,7 @@ const styles = StyleSheet.create({
     margin:2.9,
     alignSelf:"center",
     objectFit:'cover',
-    padding:1
+    // padding:1
   },
   itemDetails: {
     flex: 1,

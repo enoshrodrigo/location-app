@@ -84,7 +84,7 @@ export default function TabTwoScreen() {
                 </View>
                 <View style={styles.dewmiPerera1StackStack}>
                   <View style={styles.dewmiPerera1Stack}>
-                    <Text style={styles.dewmiPerera1}>Dewni Perera</Text>
+                    <Text style={styles.dewmiPerera1}>Dewmi Perera</Text>
                     <ImageBackground
                       style={styles.rect2}
                       imageStyle={styles.rect2_imageStyle}
