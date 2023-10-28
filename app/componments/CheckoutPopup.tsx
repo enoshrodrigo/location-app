@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     PicBox:{
         backgroundColor:"lightblue",
         borderRadius:10,
-        width:105,height:105,margin:2,alignSelf:"center",objectFit:"contain",
+        width:120,height:102,margin:2,alignSelf:"center", 
         // padding:2,
         
       

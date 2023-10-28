@@ -6,7 +6,7 @@ import { TextInput } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import MapView ,{Marker ,PROVIDER_GOOGLE  } from 'react-native-maps';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import * as Location from 'expo-location';
 import { Link, useLocalSearchParams, useRouter } from 'expo-router';
 import { Card } from 'react-native-paper';
@@ -19,7 +19,7 @@ import { color } from 'react-native-elements/dist/helpers';
 // type props ={
 //   id:string
 // }
-
+import  TabOneScreen from "./(tabs)/index"
 
 function calculateDistance(lat2:number, lon2:number) {
   // Radius of the Earth in kilometers
@@ -93,11 +93,12 @@ export default function ModalScreen() {
     
    
   }; 
-  
+   
    async function deleteCart(ids:string){
-    
+     
     await axios.post(`${process.env.EXPO_PUBLIC_API_URL}/delete`,{id:ids}).then((res)=>{
       alert("Item deleted succesfully");
+      // refreshCart()
        getTotal();
     ( async()=>{ await axios.post(`${process.env.EXPO_PUBLIC_API_URL}/getcart`).then((res)=>{
       setCheckOutItems(res.data)
@@ -109,6 +110,7 @@ export default function ModalScreen() {
   }
 
   async function quntity(id:string,quntity:number,plusOrMinus:string) {
+    // refreshCart()
     plusOrMinus==="+"?quntity++:quntity--;
       
       if(quntity>5){
@@ -204,7 +206,7 @@ export default function ModalScreen() {
 
 
   <View style={[styles.secondBox,theme==='dark'?{backgroundColor:"white"}:{backgroundColor:"white"}]} >
-  <Text style={[{textAlign:"center",fontSize:16,fontWeight:"bold"},theme==='light'?{color:"black"}:{color:"white"}]}>{cart.itemname}  </Text> 
+  <Text style={[{textAlign:"center",fontSize:16,fontWeight:"bold"},theme==='light'?{color:"black"}:{color:"white"}]}>{cart.itemname} </Text> 
 
 <View style={ [{flexDirection:'row',alignSelf:"stretch",justifyContent:"space-between",backgroundColor:"white",borderRadius:12,},theme=='light'?{backgroundColor:"white"}:{backgroundColor:"1f1f1f"}]}>
 
@@ -348,7 +350,8 @@ borderRadius:12,
    map: {
     width: '98%',
     height: '88%',
-    borderRadius:22
+    borderRadius:22,
+    alignSelf:'center'
   },
   scrollCartView:{
 margin:8,

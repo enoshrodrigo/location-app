@@ -1,4 +1,4 @@
-import { Platform, ScrollView, StyleSheet, useColorScheme , FlatList,  } from "react-native";
+import { Platform, ScrollView, StyleSheet,Dimensions , useColorScheme , FlatList,Pressable  } from "react-native";
 import Carousel from 'react-native-snap-carousel';
 
 import EditScreenInfo from "../../components/EditScreenInfo";
@@ -14,9 +14,11 @@ import TabThreeScreen from "../componments/test";
 import { cooking, offers } from "../../data";
 import { useFonts } from "expo-font";
 import { Image } from "react-native-elements";
-import { color } from "framer-motion";
+// import { color } from "framer-motion";
 import { FontAwesome } from "@expo/vector-icons";
 import { Link } from "expo-router";
+import axios from "axios";
+import { threeItemsOffer,Todayspecial,carouselData } from "../../data";
 interface Item {
   id: string;
   name: string;
@@ -25,20 +27,9 @@ interface Item {
 }
 
 
-const data: Item[] = [
-  { id: '1', name: "Brown Shirt", price: '1000', link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
-  { id: '2', name: "Brown Shirt", price: '1000', link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" },
-  { id: '3', name: "Brown Shirt", price: '1000', link: "https://ae01.alicdn.com/kf/S9427cf6b55f14f99a4c04dbefc8a5c76g.jpg_640x640Q90.jpg_.webp" }
+ 
 
-];
-
-const data2: Item[] = [
-  { id: '1', name: "Brown Shirt", price: '1000', link: "https://www.adorainteriors.com/wp-content/uploads/2021/08/2-1.png" },
-  { id: '2', name: "Brown Shirt", price: '1000', link: "https://www.adorainteriors.com/wp-content/uploads/2021/08/2-1.png" },
-  { id: '3', name: "Brown Shirt", price: '1000', link: "https://www.adorainteriors.com/wp-content/uploads/2021/08/2-1.png" },
-  
-
-];
+ 
 
 const discountData: Item[] = [
   { id: '1', name: "Brown Shirt", price: '1000', link: "https://p4-ofp.static.pub/fes/cms/2023/03/28/7dch8vg9lz0tzeg74u3x9paoln4o8z319478.png" },
@@ -48,15 +39,12 @@ const discountData: Item[] = [
   { id: '5', name: "Brown Shirt", price: '1000', link: "https://p4-ofp.static.pub/fes/cms/2023/03/28/7dch8vg9lz0tzeg74u3x9paoln4o8z319478.png" },
   { id: '6', name: "Brown Shirt", price: '1000', link: "https://p4-ofp.static.pub/fes/cms/2023/03/28/7dch8vg9lz0tzeg74u3x9paoln4o8z319478.png" },
 ];
+
 export default function TabOneScreen() {
   const colorScheme = useColorScheme();
-  const carouselData = [
-    'https://www.thesunglassfix.com.au/image/cache/MANUFACTURER%20PHOTOS%202020/SUNGLASS-HUT-replacement-sunglass-lenses-690x447.png',
-    'https://pagebuilder.webshopworks.com/202-medium_default/wooden-chair.jpg',
-    'https://static.vecteezy.com/system/resources/previews/021/054/428/original/3d-wooden-bookshelf-png.png',
-  ];
+  const { width } = Dimensions.get('window');
   const renderItem = ({ item }: { item: string }) => (
-    <View style={{backgroundColor:"white",margin:2,padding:9, alignSelf:"center",borderRadius:12}}>
+    <View style={{alignSelf:"center",borderRadius:12,width:'100%'}}>
       <Image
         source={{ uri: item }}
         style={styles.carouselImage}
@@ -66,11 +54,39 @@ export default function TabOneScreen() {
   // const [fontsLoaded] = useFonts({
   //   'Playpen Sans': 'https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@5500;400;500&display=swap',
   // });
+  const [cartItems, setCartItems] = useState(
+    [{ categoryid: "0", id: ' ', itemname: " ", price: 0, link: "https://assets-global.website-files.com/5cdcb07b95678db167f2bd86/6340bdfbeb3b663555ee1dca_Best%20receipts%20app%20HERO.png" },]
+  );
 
+  const addToCart = async (item:any) => {
+    
+ 
+    await axios.post(`${process.env.EXPO_PUBLIC_API_URL}/api/addtocart`,{data:item}).then((res)=>{
+     setCartItems(res.data)
+     alert("Item added to cart ")
+    }).catch((err)=>{
+      console.log(err);
+    })
+   
+};
+// const refreshCart=async()=>{ await axios.post(`${process.env.EXPO_PUBLIC_API_URL}/getcart`).then((res)=>{
+//   setCartItems(res.data)
+//  }).catch((err)=>{
+//    console.log(err);})
+// }
+useEffect(  ()=>{
+
+( async()=>{ await axios.post(`${process.env.EXPO_PUBLIC_API_URL}/getcart`).then((res)=>{
+  setCartItems(res.data)
+ }).catch((err)=>{
+   console.log(err);})
+}) ()
+
+},[ ])
   return (
     <View style={styles.container}>
        <View style={styles.titleView}>
-          <Text style={styles.Mtexts}>The Shooping</Text>
+          <Text style={styles.Mtexts}>U STORE</Text>
         </View>
      <View >
        <View style={[styles.searchContainer,colorScheme==='dark'?{backgroundColor:"white"}:{backgroundColor:"white"}]}>
@@ -92,14 +108,19 @@ export default function TabOneScreen() {
         {/* <Items />  */}
         <ScrollView>
 
+        <View  style={{marginLeft:4}}>
         <Carousel
         data={carouselData}
+      loop={true}
         renderItem={renderItem}
-        sliderWidth={360} 
-        itemWidth={320} 
+        sliderWidth={width-9.5} 
+        itemWidth={width-8} 
+        objectFit={"contain"}
         autoplay={true}
-        autoplayInterval={5000} // 5 seconds
-      />
+        autoplayInterval={3000}
+      
+      /></View>
+       
 {/* //dulara code */}
 
 <View style={styles.headingContainer}>
@@ -107,7 +128,7 @@ export default function TabOneScreen() {
       </View>
 
       <FlatList
-        data={data2}
+        data={Todayspecial}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.itemContainer}>
@@ -116,12 +137,48 @@ export default function TabOneScreen() {
               style={styles.itemImage}
             />
             <View style={styles.itemDetails}>
-              <Text style={styles.itemName}>{item.name}</Text>
-              <Text style={styles.itemPrice}>{item.price}</Text>
-        <Link style={{ margin:8,alignSelf:"flex-end", }} href={{ pathname: '/categoryItems', params: { name: 'list.id' } }}><View style={styles.button}><Text style={{  textAlign:"center",color:"black", fontWeight:"700",fontSize:16 }}>Buy now</Text></View></Link>
-
+              <Text style={styles.itemName}>{item.itemname}</Text>
+          <View style={[{alignSelf:"flex-start",top:50,margin:9,backgroundColor:"#1f1f1f"}]}>
+               <Text style={[styles.itemPrice]}>RS.{item.price}</Text>
+            
+            </View>  
+ 
+        {/* <Link style={{ margin:8,alignSelf:"flex-end", }} href={{ pathname: '/categoryItems', params: { name: 'list.id' } }}><View style={styles.button}><Text style={{  textAlign:"center",color:"black", fontWeight:"700",fontSize:16 }}>Explore</Text></View></Link> */}
+       
+        
+          <Pressable
+          style={[styles.button, cartItems.some((cartItem) => cartItem.id === item.id) && styles.disabledButton]}
+          onPress={() => {
+            addToCart(item);
+          }}
+          disabled={cartItems.some((cartItem) => cartItem.id === item.id)}
+        >
+           <View style={[cartItems.some((cartItem) => cartItem.id === item.id)?{backgroundColor:"gray"}:{backgroundColor:"lightblue"},{alignItems:"center"}]}>
+            {cartItems.some((cartItem) => cartItem.id === item.id)
+              ?(<Text >
+                <Text style={[styles.addCart,{backgroundColor:"gray"}]}>Added </Text>
+                <FontAwesome
+                name="check-circle"
+                size={24}
+                color="black"
+                // style={{ marginRight: 15 }}
+              />
+              </Text>)
+              :  (<Text >
+                <Text style={styles.addCart}>Add </Text>
+              <FontAwesome
+                name="check-circle-o"
+                size={24}
+                color="darkblue"
+                // style={{ margin: 2 }}
+              /></Text>)}
+           </View>
+        </Pressable>
+       
+    
             </View>
-          </View>
+            </View>
+        
         )}
       />
       
@@ -141,7 +198,7 @@ export default function TabOneScreen() {
         <Text style={styles.heading}>3+ Items for 2000</Text>
       </View>
       <FlatList
-        data={data}
+        data={threeItemsOffer}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.itemContainer}>
@@ -150,11 +207,45 @@ export default function TabOneScreen() {
               style={styles.itemImage}
             />
             <View style={styles.itemDetails}>
-              <Text style={styles.itemName}>{item.name}</Text>
-              <Text style={styles.itemPrice}>RS.{item.price}</Text>
+              <Text style={styles.itemName}>{item.itemname}</Text>
+            <View style={[{alignSelf:"flex-start",top:50,margin:9,backgroundColor:"#1f1f1f"}]}>
+               <Text style={[styles.itemPrice]}>RS.{item.price}</Text>
+            
+            </View>  
  
-        <Link style={{ margin:8,alignSelf:"flex-end", }} href={{ pathname: '/categoryItems', params: { name: 'list.id' } }}><View style={styles.button}><Text style={{  textAlign:"center",color:"black", fontWeight:"700",fontSize:16 }}>Explore</Text></View></Link>
-
+        {/* <Link style={{ margin:8,alignSelf:"flex-end", }} href={{ pathname: '/categoryItems', params: { name: 'list.id' } }}><View style={styles.button}><Text style={{  textAlign:"center",color:"black", fontWeight:"700",fontSize:16 }}>Explore</Text></View></Link> */}
+       
+        
+          <Pressable
+          style={[styles.button, cartItems.some((cartItem) => cartItem.id === item.id) && styles.disabledButton]}
+          onPress={() => {
+            addToCart(item);
+          }}
+          disabled={cartItems.some((cartItem) => cartItem.id === item.id)}
+        >
+           <View style={[cartItems.some((cartItem) => cartItem.id === item.id)?{backgroundColor:"gray"}:{backgroundColor:"lightblue"},{alignItems:"center"}]}>
+            {cartItems.some((cartItem) => cartItem.id === item.id)
+              ?(<Text >
+                <Text style={[styles.addCart,{backgroundColor:"gray"}]}>Added </Text>
+                <FontAwesome
+                name="check-circle"
+                size={24}
+                color="black"
+                // style={{ marginRight: 15 }}
+              />
+              </Text>)
+              :  (<Text >
+                <Text style={styles.addCart}>Add </Text>
+              <FontAwesome
+                name="check-circle-o"
+                size={24}
+                color="darkblue"
+                // style={{ margin: 2 }}
+              /></Text>)}
+           </View>
+        </Pressable>
+       
+    
             </View>
           </View>
         )}
@@ -178,15 +269,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  Offers: {
+  disabledButton: {
+    backgroundColor: 'gray', // Change this to your preferred disabled button style
+    opacity: 0.6, 
+    width:99,// Adjust opacity as needed
+    // Add other styles to visually indicate a disabled button
+  },
+  addCart:{    color:"#1f1f1f", fontWeight:"700",fontSize:18 },
+  Offers: { 
     margin: 8,
   },
   
   button:{
     borderRadius: 20,
-    width:88,
+    width:100,
     backgroundColor:"lightblue",
-    padding:8,
+    padding:7.2,
+    margin:10,
+    alignSelf:"flex-end"
    
   },
   titleView: {
@@ -251,8 +351,13 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   carouselImage: {
-    width: 300, 
-    height: 200, 
+    width:  366.2, 
+    height:215,
+    objectFit:"fill",
+    borderRadius:8.8,
+    borderColor:'lightblue',
+    borderWidth:1.4,
+ 
     
   },
   discountSection: {
@@ -277,33 +382,42 @@ const styles = StyleSheet.create({
   itemContainer: {
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
-    padding: 10,
+    padding: 8,
     borderRadius: 5,
     marginBottom: 12,
   },
   itemImage: {
-    width: 80,
-    height: 80,
-    marginRight: 10,
-    borderRadius: 5,
+    backgroundColor:"lightblue",
+    borderRadius:10,
+    width:110,
+    height:"auto" ,
+    margin:2.9,
+    alignSelf:"center",
+    objectFit:'cover',
+    padding:1
   },
   itemDetails: {
     flex: 1,
-    backgroundColor:"black",
+    backgroundColor:"#1f1f1f",
   
     borderRadius:12
   },
   itemName: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 20,
+    // fontWeight: 'bold',
     alignSelf:"center",
     marginTop:4,
+    fontWeight:'500',
     color:"white",
   },
   itemPrice: {
     fontSize: 18,
     color: 'white',
     // alignSelf:"baseline"
+    flexDirection:"row",
+    // display:"flex", 
+    fontWeight:'500'
+    // alignSelf:"flex-end"
   },
 
 });

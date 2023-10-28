@@ -38,7 +38,7 @@ export default function RootLayout() {
   }, [loaded]);
 
   // Implement authentication state and logic
-  const [authenticated, setAuthenticated] = useState(true);
+  const [authenticated, setAuthenticated] = useState(false);
 
   if (!loaded) {
     return null;
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
   },
   loggedInText: {
     fontSize: 20,
-    color: "#0a0",
+    color: "#0a0", 
     textAlign: "center",
   },
   buttonContainer: {

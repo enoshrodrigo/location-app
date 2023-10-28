@@ -129,10 +129,9 @@ export const Items = [
 
 export const images=[
   {
-    checkout:"https://styles.redditmedia.com/t5_xphkm/styles/communityIcon_pyhoorfg61ca1.png",
+    checkout:"https://cdn.iconscout.com/icon/free/png-256/free-right-1478289-1251141.png",
   }
 ]
-
 
 export const offers =[
   // { categoryid: "099", id: '901', itemname: "Discounted Item", price: 400 ,link: "https://d2b8wt72ktn9a2.cloudfront.net/mediocre/image/upload/c_pad,f_auto,h_600,q_auto,w_600/l3skqjw9zd4wqw8ubfx2.gif"},
@@ -140,7 +139,7 @@ export const offers =[
   { categoryid: "099", id: '903', itemname: "Airpods Pro", price: 6500 ,link: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/airpods/ios14-3-iphone11-pro-connect-airpods-max-animation.gif"},
   { categoryid: "099", id: '904', itemname: "Galaxy Buds (Discounted)", price: 4500 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
   { categoryid: "099", id: '905', itemname: "Galaxy Buds (Discounted)", price: 4500 ,link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
-
+  
 ]
 
 export const cooking =[
@@ -151,8 +150,28 @@ export const cooking =[
   { categoryid: "0100", id: '909', itemname: "Cheese Ramen", price: 4500 ,link: "https://magasinasiatique.com/cdn/shop/products/67627-removebg-preview_1_a42a479b-f8fa-4591-9f67-a8775e24c743_580x.png?v=1619649627"},
 
 ]
-// ../../assets/
-// ../../assets/
+export  const carouselData = [
+  'https://www.istore.co.za/media/wysiwyg/HomePage/iphone-free-icare-plus.png',
+  'https://cdn.grabon.in/gograbon/images/web-images/uploads/1617875488697/clothing-offers.jpg',
+  'https://cdn.greatdeals.com.sg/wp-content/uploads/2020/09/04124301/nike-singapore-25-off-promo-code.jpg',
+  'https://media-asia-cdn.oriflame.com/contentImage?externalMediaId=d03a8bba-31fc-4d15-891d-56aa252dd1b5&name=super-flyer&inputFormat=png&q=70',
+  'https://cdn.singpromos.com/wp-content/uploads/2022/11/Nike-7-Nov-2022.jpg',
+];
+export const threeItemsOffer=[
+  { categoryid: "055", id: '1000', itemname: "Toy Car", price: 1400, link: "https://cdn.shopify.com/s/files/1/0602/9692/1333/files/Bugatti_yellow_car_1_1.png?v=1641937690"},
+  { categoryid: "055", id: '1001', itemname: "Toy Car", price: 1400, link: "https://cdn.shopify.com/s/files/1/0602/9692/1333/files/Bugatti_yellow_car_1_1.png?v=1641937690"},
+  { categoryid: "055", id: '1002', itemname: "Toy Car", price: 1400, link: "https://cdn.shopify.com/s/files/1/0602/9692/1333/files/Bugatti_yellow_car_1_1.png?v=1641937690"},
+
+]
+
+export const Todayspecial= [
+  { categoryid: "055", id: '1003', itemname: "15 Pro max", price: 85000, link: "https://iqstoreindia.com/assets/images/iphone-15-pro/iphone15-pro-black.png"},
+  { categoryid: "055", id: '1004', itemname: "JBL Xtreme", price: 1400, link: "https://th.jbl.com/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw1554c93e/XTREME_FRONT_BLACK_new-renders_N3_dvHAMaster.png"},
+  { categoryid: "055", id: '1005', itemname: "Samsung Ear Buds", price: 1400, link: "https://community.o2.co.uk/t5/image/serverpage/image-id/26901i6DD5C2CADE0774D1/image-size/original?v=1.0&px=-1"},
+  
+];
+  // ../../assets/
+  // ../../assets/
 // ../../assets/
 // ../../assets/
 // ../../assets/
