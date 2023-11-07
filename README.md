@@ -32,7 +32,7 @@ Team members-
 
 To get started with the project, follow these steps:
 
-1. **Clone the Repository:**
+1. **Clone the testRelease Branch:**
 2. **Install Dependencies:**
 3. **Set Up the Database:**
 - Create a MySQL database and configure the connection in the app.
