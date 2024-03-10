@@ -417,59 +417,9 @@ const styles = StyleSheet.create({
 })
 ;
  
-function LoginScreen({ onLogin }: any) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+ 
 
-  const handleLogin = () => {
-    if (email === '123' && password === '123') {
-      onLogin(); // Set authentication status to true.
-    } else {
-      // Display an error message or take appropriate action for failed login.
-      alert("Invalid details")
-    }
-  };
-
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={(text) => setEmail(text)}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        secureTextEntry={true}
-        value={password}
-        onChangeText={(text) => setPassword(text)}
-      />
-      <Button title="Log In" onPress={handleLogin} />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-  },
-  input: {
-    width: '80%',
-    padding: 10,
-    marginBottom: 10,
-    borderWidth: 1,
-    borderColor: 'gray',
-    borderRadius: 5,
-  },
-});
+ 
  
 
 
