@@ -38,3 +38,5 @@ To get started with the project, follow these steps:
 - Create a MySQL database and configure the connection in the app.
 
 4. **Run the Application:**
+
+5. navigation - npx create-expo-app --template
