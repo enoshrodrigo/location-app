@@ -42,3 +42,12 @@ To get started with the project, follow these steps:
 5. navigation - npx create-expo-app --template
 6. if there is a navigation error on expo app ios use -npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
  and import -import 'react-native-gesture-handler'; to main file
+
+eas build -
+     npm install -g eas-cli
+     eas build -p android --profile preview
+      eas build --platform android
+      eas build:configure
+      eas login
+      
+     
