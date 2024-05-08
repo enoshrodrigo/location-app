@@ -40,3 +40,5 @@ To get started with the project, follow these steps:
 4. **Run the Application:**
 
 5. navigation - npx create-expo-app --template
+6. if there is a navigation error on expo app ios use -npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+ and import -import 'react-native-gesture-handler'; to main file
