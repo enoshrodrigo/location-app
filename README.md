@@ -43,6 +43,10 @@ To get started with the project, follow these steps:
 6. if there is a navigation error on expo app ios use -npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
  and import -import 'react-native-gesture-handler'; to main file
 
+--New--
+7.npx install expo@51 
+8. npm install --legacy-peer-deps for
+
 eas build -
      npm install -g eas-cli
      eas build -p android --profile preview
